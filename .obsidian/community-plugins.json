@@ -2,5 +2,6 @@
   "obsidian-excalidraw-plugin",
   "obsidian-git",
   "juggl",
-  "obsidian-tikzjax"
+  "obsidian-tikzjax",
+  "obsidian-version-history-diff"
 ]

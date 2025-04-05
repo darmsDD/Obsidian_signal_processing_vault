@@ -4,35 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "ae87a18cfcd22a49",
+        "id": "3edb75e31c3ef947",
         "type": "tabs",
         "children": [
           {
-            "id": "0320948157e517a5",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "juggl_view",
-              "state": {},
-              "pinned": true,
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
-            }
-          },
-          {
-            "id": "56ca6c39ef10f8cb",
+            "id": "bd9807f34d268772",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "Excalidraw/SinalAmostrado_Sequencia.excalidraw.md"
+                "file": "Aula 5/Transformada de Fourier Discreta.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "excalidraw-icon",
-              "title": "SinalAmostrado_Sequencia.excalidraw"
+              "icon": "lucide-file",
+              "title": "Transformada de Fourier Discreta"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -89,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "c2ac1b23dc8328aa",
@@ -194,7 +183,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 419.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -209,12 +198,16 @@
       "juggl:Juggl global graph": false
     }
   },
-  "active": "a9994f7544cce748",
+  "active": "bd9807f34d268772",
   "lastOpenFiles": [
     "Excalidraw/SinalAmostrado_Sequencia.excalidraw.md",
+    "Aula 5/Transformada de Fourier Discreta.md",
+    "Aula 5/Untitled.md",
+    "Aula 5/Transformada de Fourier de uma sequência.md",
+    "Aula 5/Rebatimento ou Aliasing.md",
+    "README.md",
     "images/aliasing.png",
     "images",
-    "Aula 5/Rebatimento ou Aliasing.md",
     "images/aliasing_filtro.png",
     "images/Pasted Image 20250403170441_584.png",
     "Aula 4/Filtros.md",
@@ -223,7 +216,6 @@
     "Aula 5/Relação entre TF de uma sequência e TF de uma função contínua.md",
     "images/trem de impulsos.png",
     "Aula 5/Sequência.md",
-    "Aula 5/Transformada de Fourier de uma sequência.md",
     "Aula1/Processamento de sinais.md",
     "Aula1/Identificação de sistemas.md",
     "Aula1/Série de Fourier.md",
