@@ -1,0 +1,253 @@
+{
+  "main": {
+    "id": "860382641792239c",
+    "type": "split",
+    "children": [
+      {
+        "id": "ae87a18cfcd22a49",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0320948157e517a5",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "juggl_view",
+              "state": {},
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
+          },
+          {
+            "id": "56ca6c39ef10f8cb",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/SinalAmostrado_Sequencia.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "SinalAmostrado_Sequencia.excalidraw"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d0bdda2738337adf",
+    "type": "split",
+    "children": [
+      {
+        "id": "2a893911f2b8f2c3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8e84baefab6716b5",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "f7f95d5f6b95b751",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "519bbde8f7d31992",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "c2ac1b23dc8328aa",
+    "type": "split",
+    "children": [
+      {
+        "id": "0db973505f5ebe93",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a519b7bf0f717548",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "fa29090192b92e61",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "9e0871e767da186b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "d709966caafdddb7",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          },
+          {
+            "id": "c5a63eb5f1f69352",
+            "type": "leaf",
+            "state": {
+              "type": "juggl_nodes",
+              "state": {},
+              "icon": "ag-node-list",
+              "title": "Juggl nodes"
+            }
+          },
+          {
+            "id": "107a65f7e49a1590",
+            "type": "leaf",
+            "state": {
+              "type": "juggl_style",
+              "state": {},
+              "icon": "ag-style",
+              "title": "Juggl style"
+            }
+          },
+          {
+            "id": "ee6320307ef372b6",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          }
+        ],
+        "currentTab": 6
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "obsidian-git:Open Git source control": false,
+      "juggl:Juggl global graph": false
+    }
+  },
+  "active": "a9994f7544cce748",
+  "lastOpenFiles": [
+    "Excalidraw/SinalAmostrado_Sequencia.excalidraw.md",
+    "images/aliasing.png",
+    "images",
+    "Aula 5/Rebatimento ou Aliasing.md",
+    "images/aliasing_filtro.png",
+    "images/Pasted Image 20250403170441_584.png",
+    "Aula 4/Filtros.md",
+    "images/filtro.png",
+    "Aula 4/A serem feitos.md",
+    "Aula 5/Relação entre TF de uma sequência e TF de uma função contínua.md",
+    "images/trem de impulsos.png",
+    "Aula 5/Sequência.md",
+    "Aula 5/Transformada de Fourier de uma sequência.md",
+    "Aula1/Processamento de sinais.md",
+    "Aula1/Identificação de sistemas.md",
+    "Aula1/Série de Fourier.md",
+    "figimpulsetraintime_34031.png",
+    "Excalidraw",
+    "Aula 3/A serem feitos.md",
+    "Untitled.md",
+    "Aula 6",
+    "Aula 5",
+    "Aula 4",
+    "Aula1/Sinal.md",
+    "Untitled.canvas",
+    "Aula2",
+    "Aula1",
+    "Aula2/Potência de um sinal.md",
+    "Aula2/Energia de um sinal.md",
+    "Aula2/Tipos de sinal.md",
+    "Excalidraw/Drawing 2025-04-01 20.12.25.excalidraw.md",
+    "a.md",
+    "b.md",
+    "Note A.md",
+    "Note D.md",
+    "Note B.md",
+    "Teste.md",
+    "Aula 3"
+  ]
+}
