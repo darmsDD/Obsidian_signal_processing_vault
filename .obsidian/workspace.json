@@ -11,14 +11,12 @@
             "id": "bd9807f34d268772",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "excalidraw",
               "state": {
-                "file": "Aula 5/Transformada de Fourier Discreta.md",
-                "mode": "source",
-                "source": false
+                "file": "Excalidraw/SinalAmostrado_Sequencia.excalidraw.md"
               },
-              "icon": "lucide-file",
-              "title": "Transformada de Fourier Discreta"
+              "icon": "excalidraw-icon",
+              "title": "SinalAmostrado_Sequencia.excalidraw"
             }
           }
         ]
@@ -78,7 +76,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 501.5
   },
   "right": {
     "id": "c2ac1b23dc8328aa",
@@ -140,12 +138,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Excalidraw/SinalAmostrado_Sequencia.excalidraw.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of SinalAmostrado_Sequencia.excalidraw"
             }
           },
           {
@@ -177,6 +176,26 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "81bf735cb33d4306",
+            "type": "leaf",
+            "state": {
+              "type": "juggl_nodes",
+              "state": {},
+              "icon": "ag-node-list",
+              "title": "Juggl nodes"
+            }
+          },
+          {
+            "id": "f04c0ec7bec78034",
+            "type": "leaf",
+            "state": {
+              "type": "juggl_style",
+              "state": {},
+              "icon": "ag-style",
+              "title": "Juggl style"
+            }
           }
         ],
         "currentTab": 6
@@ -200,11 +219,20 @@
   },
   "active": "bd9807f34d268772",
   "lastOpenFiles": [
-    "Excalidraw/SinalAmostrado_Sequencia.excalidraw.md",
-    "Aula 5/Transformada de Fourier Discreta.md",
-    "Aula 5/Untitled.md",
-    "Aula 5/Transformada de Fourier de uma sequência.md",
     "Aula 5/Rebatimento ou Aliasing.md",
+    "Aula 5/Sequência.md",
+    "Aula 5/Relação entre TF de uma sequência e TF de uma função contínua.md",
+    "Aula 5/Transformada de Fourier Discreta.md",
+    "Excalidraw/SinalAmostrado_Sequencia.excalidraw.md",
+    "Aula 5/Transformada de Fourier de uma sequência.md",
+    "Aula 5/Zero padding.md",
+    "zero_padding4.png",
+    "Pasted image 20250406124036.png",
+    "zero_padding3.png",
+    "outro_exemplo_zero_padding.png",
+    "zero_padding.png",
+    "Aula 5/Teorema de Shannon (Reconstrução do sinal).md",
+    "images/Transformada de diferentes sinais.png",
     "README.md",
     "images/aliasing.png",
     "images",
@@ -213,13 +241,9 @@
     "Aula 4/Filtros.md",
     "images/filtro.png",
     "Aula 4/A serem feitos.md",
-    "Aula 5/Relação entre TF de uma sequência e TF de uma função contínua.md",
-    "images/trem de impulsos.png",
-    "Aula 5/Sequência.md",
     "Aula1/Processamento de sinais.md",
     "Aula1/Identificação de sistemas.md",
     "Aula1/Série de Fourier.md",
-    "figimpulsetraintime_34031.png",
     "Excalidraw",
     "Aula 3/A serem feitos.md",
     "Untitled.md",
@@ -238,8 +262,6 @@
     "b.md",
     "Note A.md",
     "Note D.md",
-    "Note B.md",
-    "Teste.md",
     "Aula 3"
   ]
 }
