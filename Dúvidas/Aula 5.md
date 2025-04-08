@@ -1,0 +1,1 @@
+- Por que é necessário dividir a DFT discreta por N, isto é, o número de pontos, para poder comparar os valores com os coeficientes da série de fourier Xk?

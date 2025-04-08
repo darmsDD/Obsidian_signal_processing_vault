@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "3edb75e31c3ef947",
+        "id": "4319282a0be87a83",
         "type": "tabs",
         "children": [
           {
-            "id": "bd9807f34d268772",
+            "id": "9e2adab846ad627e",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "Excalidraw/SinalAmostrado_Sequencia.excalidraw.md"
+                "file": "Dúvidas/Aula 5.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "excalidraw-icon",
-              "title": "SinalAmostrado_Sequencia.excalidraw"
+              "icon": "lucide-file",
+              "title": "Aula 5"
             }
           }
         ]
@@ -76,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 501.5
+    "width": 200
   },
   "right": {
     "id": "c2ac1b23dc8328aa",
@@ -138,13 +140,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Excalidraw/SinalAmostrado_Sequencia.excalidraw.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of SinalAmostrado_Sequencia.excalidraw"
+              "title": "Outline"
             }
           },
           {
@@ -176,26 +177,6 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
-          },
-          {
-            "id": "81bf735cb33d4306",
-            "type": "leaf",
-            "state": {
-              "type": "juggl_nodes",
-              "state": {},
-              "icon": "ag-node-list",
-              "title": "Juggl nodes"
-            }
-          },
-          {
-            "id": "f04c0ec7bec78034",
-            "type": "leaf",
-            "state": {
-              "type": "juggl_style",
-              "state": {},
-              "icon": "ag-style",
-              "title": "Juggl style"
-            }
           }
         ],
         "currentTab": 6
@@ -217,23 +198,24 @@
       "juggl:Juggl global graph": false
     }
   },
-  "active": "bd9807f34d268772",
+  "active": "9e2adab846ad627e",
   "lastOpenFiles": [
-    "Aula 5/Rebatimento ou Aliasing.md",
-    "Aula 5/Sequência.md",
-    "Aula 5/Relação entre TF de uma sequência e TF de uma função contínua.md",
-    "Aula 5/Transformada de Fourier Discreta.md",
+    "images/outro_exemplo_zero_padding.png",
+    "Dúvidas/Aula 5.md",
+    "Dúvidas",
     "Excalidraw/SinalAmostrado_Sequencia.excalidraw.md",
-    "Aula 5/Transformada de Fourier de uma sequência.md",
-    "Aula 5/Zero padding.md",
-    "zero_padding4.png",
-    "Pasted image 20250406124036.png",
-    "zero_padding3.png",
-    "outro_exemplo_zero_padding.png",
-    "zero_padding.png",
     "Aula 5/Teorema de Shannon (Reconstrução do sinal).md",
+    "images/zero_padding4.png",
+    "images/zero_padding3.png",
+    "images/zero_padding.png",
     "images/Transformada de diferentes sinais.png",
-    "README.md",
+    "Aula 5/Zero padding.md",
+    "Aula 5/Relação entre TF de uma sequência e TF de uma função contínua.md",
+    "Aula 5/Transformada de Fourier de uma sequência.md",
+    "Aula 5/Transformada de Fourier Discreta.md",
+    "Aula 5/Untitled.md",
+    "Aula 5/Rebatimento ou Aliasing.md",
+    "images/README.md",
     "images/aliasing.png",
     "images",
     "images/aliasing_filtro.png",
@@ -241,6 +223,8 @@
     "Aula 4/Filtros.md",
     "images/filtro.png",
     "Aula 4/A serem feitos.md",
+    "images/trem de impulsos.png",
+    "Aula 5/Sequência.md",
     "Aula1/Processamento de sinais.md",
     "Aula1/Identificação de sistemas.md",
     "Aula1/Série de Fourier.md",
@@ -260,8 +244,6 @@
     "Excalidraw/Drawing 2025-04-01 20.12.25.excalidraw.md",
     "a.md",
     "b.md",
-    "Note A.md",
-    "Note D.md",
     "Aula 3"
   ]
 }
