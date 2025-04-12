@@ -4,24 +4,37 @@
     "type": "split",
     "children": [
       {
-        "id": "4319282a0be87a83",
+        "id": "3edb75e31c3ef947",
         "type": "tabs",
         "children": [
           {
-            "id": "9e2adab846ad627e",
+            "id": "bd9807f34d268772",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Dúvidas/Aula 5.md",
+                "file": "Aula1/O que anotar.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Aula 5"
+              "title": "O que anotar"
+            }
+          },
+          {
+            "id": "0c8cfd4e3ee10fc6",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Aula1/Aula1.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Aula1.excalidraw"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -78,7 +91,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 501.5
   },
   "right": {
     "id": "c2ac1b23dc8328aa",
@@ -140,12 +153,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Excalidraw/SinalAmostrado_Sequencia.excalidraw.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of SinalAmostrado_Sequencia.excalidraw"
             }
           },
           {
@@ -177,6 +191,26 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "81bf735cb33d4306",
+            "type": "leaf",
+            "state": {
+              "type": "juggl_nodes",
+              "state": {},
+              "icon": "ag-node-list",
+              "title": "Juggl nodes"
+            }
+          },
+          {
+            "id": "f04c0ec7bec78034",
+            "type": "leaf",
+            "state": {
+              "type": "juggl_style",
+              "state": {},
+              "icon": "ag-style",
+              "title": "Juggl style"
+            }
           }
         ],
         "currentTab": 6
@@ -198,43 +232,46 @@
       "juggl:Juggl global graph": false
     }
   },
-  "active": "9e2adab846ad627e",
+  "active": "8e84baefab6716b5",
   "lastOpenFiles": [
-    "images/outro_exemplo_zero_padding.png",
-    "Dúvidas/Aula 5.md",
-    "Dúvidas",
+    "Aula1/O que anotar.md",
+    "Aula1/Aula1.excalidraw.md",
+    "Aula1/Identificação de sistemas.md",
+    "Aula1/Processamento de sinais.md",
+    "Xk_k_vs_fk.png",
+    "Aula1/Sinal.md",
+    "Aula1/Série de Fourier.md",
+    "Aula 5/Leakage.md",
+    "Aula 5/Rebatimento ou Aliasing.md",
     "Excalidraw/SinalAmostrado_Sequencia.excalidraw.md",
-    "Aula 5/Teorema de Shannon (Reconstrução do sinal).md",
     "images/zero_padding4.png",
     "images/zero_padding3.png",
     "images/zero_padding.png",
-    "images/Transformada de diferentes sinais.png",
-    "Aula 5/Zero padding.md",
-    "Aula 5/Relação entre TF de uma sequência e TF de uma função contínua.md",
-    "Aula 5/Transformada de Fourier de uma sequência.md",
-    "Aula 5/Transformada de Fourier Discreta.md",
-    "Aula 5/Untitled.md",
-    "Aula 5/Rebatimento ou Aliasing.md",
+    "images/outro_exemplo_zero_padding.png",
     "images/README.md",
-    "images/aliasing.png",
-    "images",
-    "images/aliasing_filtro.png",
-    "images/Pasted Image 20250403170441_584.png",
-    "Aula 4/Filtros.md",
-    "images/filtro.png",
-    "Aula 4/A serem feitos.md",
-    "images/trem de impulsos.png",
+    "Dúvidas/Aula 5.md",
+    "Dúvidas",
     "Aula 5/Sequência.md",
-    "Aula1/Processamento de sinais.md",
-    "Aula1/Identificação de sistemas.md",
-    "Aula1/Série de Fourier.md",
+    "Aula 5/Relação entre TF de uma sequência e TF de uma função contínua.md",
+    "Aula 5/Transformada de Fourier Discreta.md",
+    "Aula 5/Transformada de Fourier de uma sequência.md",
+    "Aula 5/Zero padding.md",
+    "zero_padding4.png",
+    "Pasted image 20250406124036.png",
+    "zero_padding3.png",
+    "outro_exemplo_zero_padding.png",
+    "zero_padding.png",
+    "Aula 5/Teorema de Shannon (Reconstrução do sinal).md",
+    "README.md",
+    "images",
+    "Aula 4/Filtros.md",
+    "Aula 4/A serem feitos.md",
     "Excalidraw",
     "Aula 3/A serem feitos.md",
     "Untitled.md",
     "Aula 6",
     "Aula 5",
     "Aula 4",
-    "Aula1/Sinal.md",
     "Untitled.canvas",
     "Aula2",
     "Aula1",
@@ -242,8 +279,6 @@
     "Aula2/Energia de um sinal.md",
     "Aula2/Tipos de sinal.md",
     "Excalidraw/Drawing 2025-04-01 20.12.25.excalidraw.md",
-    "a.md",
-    "b.md",
     "Aula 3"
   ]
 }
