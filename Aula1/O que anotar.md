@@ -5,6 +5,8 @@
 - Sinal
 - Frequência de rotação
 - Frequência
+- Frequência fundamental:
+		- Seja x(t) um sinal periódico, logo x(t) possui um período T. A frequência fundamental seria 1/T, isto é o primeiro harmônico. O segundo harmônico seria 2*(1/T), o terceiro 3*(1/T), e assim por diante. Então a  enésima frequência harmônica seria n*(1/T) . Sendo n um número inteiro.
 - Amplitude
 - Período T
 - Fase

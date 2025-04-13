@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "bd9807f34d268772",
+            "id": "0c8cfd4e3ee10fc6",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -22,7 +22,7 @@
             }
           },
           {
-            "id": "0c8cfd4e3ee10fc6",
+            "id": "0f6926e654944e18",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
@@ -232,15 +232,17 @@
       "juggl:Juggl global graph": false
     }
   },
-  "active": "0c8cfd4e3ee10fc6",
+  "active": "0f6926e654944e18",
   "lastOpenFiles": [
+    "Aula1/Vetores Girantes no plano complexo.md",
     "Aula1/Aula1.excalidraw.md",
     "Aula1/O que anotar.md",
+    "images/vetores_girantes_plano_complexo.png",
+    "Aula1/Série de Fourier.md",
     "Aula1/Identificação de sistemas.md",
     "Aula1/Processamento de sinais.md",
     "Xk_k_vs_fk.png",
     "Aula1/Sinal.md",
-    "Aula1/Série de Fourier.md",
     "Aula 5/Leakage.md",
     "Aula 5/Rebatimento ou Aliasing.md",
     "Excalidraw/SinalAmostrado_Sequencia.excalidraw.md",
@@ -260,7 +262,6 @@
     "Pasted image 20250406124036.png",
     "zero_padding3.png",
     "outro_exemplo_zero_padding.png",
-    "zero_padding.png",
     "Aula 5/Teorema de Shannon (Reconstrução do sinal).md",
     "README.md",
     "images",
@@ -277,8 +278,6 @@
     "Aula1",
     "Aula2/Potência de um sinal.md",
     "Aula2/Energia de um sinal.md",
-    "Aula2/Tipos de sinal.md",
-    "Excalidraw/Drawing 2025-04-01 20.12.25.excalidraw.md",
     "Aula 3"
   ]
 }
