@@ -11,26 +11,36 @@
             "id": "0c8cfd4e3ee10fc6",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Aula1/O que anotar.md",
-                "mode": "source",
-                "source": false
+                "file": "IM331_Lista2_1S2025.pdf"
               },
-              "icon": "lucide-file",
-              "title": "O que anotar"
+              "icon": "lucide-file-text",
+              "title": "IM331_Lista2_1S2025"
             }
           },
           {
             "id": "0f6926e654944e18",
             "type": "leaf",
             "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Aula 5/PSinais_Aula4_2_1S2018.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "PSinais_Aula4_2_1S2018"
+            }
+          },
+          {
+            "id": "004b84b651cdcfeb",
+            "type": "leaf",
+            "state": {
               "type": "excalidraw",
               "state": {
-                "file": "Aula1/Aula1.excalidraw.md"
+                "file": "Aula 5/SinalAmostrado_Sequencia.excalidraw.md"
               },
               "icon": "excalidraw-icon",
-              "title": "Aula1.excalidraw"
+              "title": "SinalAmostrado_Sequencia.excalidraw"
             }
           }
         ],
@@ -232,11 +242,18 @@
       "juggl:Juggl global graph": false
     }
   },
-  "active": "476cecc2b053259c",
+  "active": "0f6926e654944e18",
   "lastOpenFiles": [
+    "Aula 5/SinalAmostrado_Sequencia.excalidraw.md",
+    "Aula 5/PSinais_Aula4_2_1S2018.pdf",
+    "IM331_Lista2_1S2025.pdf",
+    "Aula 5/Transformada de Fourier Discreta.md",
+    "Lista2/exerc4.asv",
+    "Aula1/O que anotar.md",
+    "Lista2/exerc4.m",
+    "Lista2",
     "Aula1/Aula1.excalidraw.md",
     "Aula1/Vetores Girantes no plano complexo.md",
-    "Aula1/O que anotar.md",
     "images/vetores_girantes_plano_complexo.png",
     "Aula1/Série de Fourier.md",
     "Aula1/Identificação de sistemas.md",
@@ -245,7 +262,6 @@
     "Aula1/Sinal.md",
     "Aula 5/Leakage.md",
     "Aula 5/Rebatimento ou Aliasing.md",
-    "Excalidraw/SinalAmostrado_Sequencia.excalidraw.md",
     "images/zero_padding4.png",
     "images/zero_padding3.png",
     "images/zero_padding.png",
@@ -255,7 +271,6 @@
     "Dúvidas",
     "Aula 5/Sequência.md",
     "Aula 5/Relação entre TF de uma sequência e TF de uma função contínua.md",
-    "Aula 5/Transformada de Fourier Discreta.md",
     "Aula 5/Transformada de Fourier de uma sequência.md",
     "Aula 5/Zero padding.md",
     "zero_padding4.png",
@@ -272,12 +287,8 @@
     "Untitled.md",
     "Aula 6",
     "Aula 5",
-    "Aula 4",
     "Untitled.canvas",
-    "Aula2",
-    "Aula1",
     "Aula2/Potência de um sinal.md",
-    "Aula2/Energia de um sinal.md",
-    "Aula 3"
+    "Aula2/Energia de um sinal.md"
   ]
 }
