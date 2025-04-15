@@ -4,37 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "3edb75e31c3ef947",
+        "id": "08bbb7e97dd11b75",
         "type": "tabs",
         "children": [
           {
-            "id": "0c8cfd4e3ee10fc6",
+            "id": "c5beac895feb9cc1",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Aula1/O que anotar.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "O que anotar"
-            }
-          },
-          {
-            "id": "0f6926e654944e18",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Aula1/Aula1.excalidraw.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "Aula1.excalidraw"
+              "title": "New tab"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -91,7 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 501.5
+    "width": 455.5
   },
   "right": {
     "id": "c2ac1b23dc8328aa",
@@ -153,13 +136,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Excalidraw/SinalAmostrado_Sequencia.excalidraw.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of SinalAmostrado_Sequencia.excalidraw"
+              "title": "Outline"
             }
           },
           {
@@ -168,8 +150,8 @@
             "state": {
               "type": "juggl_nodes",
               "state": {},
-              "icon": "ag-node-list",
-              "title": "Juggl nodes"
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
             }
           },
           {
@@ -178,8 +160,8 @@
             "state": {
               "type": "juggl_style",
               "state": {},
-              "icon": "ag-style",
-              "title": "Juggl style"
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
             }
           },
           {
@@ -193,7 +175,7 @@
             }
           },
           {
-            "id": "81bf735cb33d4306",
+            "id": "805ad1104ba985b8",
             "type": "leaf",
             "state": {
               "type": "juggl_nodes",
@@ -203,7 +185,7 @@
             }
           },
           {
-            "id": "f04c0ec7bec78034",
+            "id": "62eb647165bfa184",
             "type": "leaf",
             "state": {
               "type": "juggl_style",
@@ -232,52 +214,54 @@
       "juggl:Juggl global graph": false
     }
   },
-  "active": "476cecc2b053259c",
+  "active": "8e84baefab6716b5",
   "lastOpenFiles": [
-    "Aula1/Aula1.excalidraw.md",
-    "Aula1/Vetores Girantes no plano complexo.md",
-    "Aula1/O que anotar.md",
+    "Lista2/exerc2.m",
+    "Lista2/exerc1_mse.png",
+    "Lista2/exerc1_32points.png",
+    "Lista2/exerc1_16points.png",
+    "Lista2/exerc1_8points.png",
+    "Lista2/exerc1.m",
+    "Lista2",
     "images/vetores_girantes_plano_complexo.png",
-    "Aula1/Série de Fourier.md",
-    "Aula1/Identificação de sistemas.md",
-    "Aula1/Processamento de sinais.md",
+    "apostila_sinais_2008_ind_ref_capa.pdf",
     "Xk_k_vs_fk.png",
-    "Aula1/Sinal.md",
+    "IM331_Lista2_1S2025.pdf",
+    "Aula2/PSinais_Aula2_1S2020.pdf",
+    "Aula1/Vetores Girantes no plano complexo.md",
+    "Aula1/PSinais_Aula1_1S2020.pdf",
+    "Aula1/O que anotar.md",
+    "Aula1/Aula1.excalidraw.md",
+    "Aula 5/PSinais_Aula4_2_1S2018.pdf",
     "Aula 5/Leakage.md",
-    "Aula 5/Rebatimento ou Aliasing.md",
+    "Aula 4/PSinais_Aula4_1S2020.pdf",
+    "Aula 3/PSinais_Aula3_1S2020.pdf",
+    "Aula 3/PSinais_Aula3-2_1S2020.pdf",
+    "Dúvidas/Aula 5.md",
+    "images/outro_exemplo_zero_padding.png",
     "Excalidraw/SinalAmostrado_Sequencia.excalidraw.md",
+    "Aula 5/Teorema de Shannon (Reconstrução do sinal).md",
     "images/zero_padding4.png",
     "images/zero_padding3.png",
     "images/zero_padding.png",
-    "images/outro_exemplo_zero_padding.png",
-    "images/README.md",
-    "Dúvidas/Aula 5.md",
-    "Dúvidas",
-    "Aula 5/Sequência.md",
-    "Aula 5/Relação entre TF de uma sequência e TF de uma função contínua.md",
-    "Aula 5/Transformada de Fourier Discreta.md",
-    "Aula 5/Transformada de Fourier de uma sequência.md",
     "Aula 5/Zero padding.md",
-    "zero_padding4.png",
-    "Pasted image 20250406124036.png",
-    "zero_padding3.png",
-    "outro_exemplo_zero_padding.png",
-    "Aula 5/Teorema de Shannon (Reconstrução do sinal).md",
-    "README.md",
-    "images",
+    "Aula 5/Relação entre TF de uma sequência e TF de uma função contínua.md",
+    "Aula 5/Transformada de Fourier de uma sequência.md",
+    "Aula 5/Transformada de Fourier Discreta.md",
+    "Aula 5/Untitled.md",
+    "Aula 5/Rebatimento ou Aliasing.md",
+    "images/README.md",
     "Aula 4/Filtros.md",
     "Aula 4/A serem feitos.md",
-    "Excalidraw",
+    "Aula 5/Sequência.md",
+    "Aula1/Processamento de sinais.md",
+    "Aula1/Identificação de sistemas.md",
+    "Aula1/Série de Fourier.md",
     "Aula 3/A serem feitos.md",
     "Untitled.md",
-    "Aula 6",
-    "Aula 5",
-    "Aula 4",
+    "Aula1/Sinal.md",
     "Untitled.canvas",
-    "Aula2",
-    "Aula1",
     "Aula2/Potência de um sinal.md",
-    "Aula2/Energia de um sinal.md",
-    "Aula 3"
+    "Aula2/Energia de um sinal.md"
   ]
 }
