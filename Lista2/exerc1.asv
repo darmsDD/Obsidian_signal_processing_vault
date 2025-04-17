@@ -20,13 +20,11 @@ while N <= limit
 
     % Plot the graphs
     figure;
-    
-    
+    yTitle("abs(Xk or DFT(x))")
+    x
     n_shift=-N/2:N/2-1;
     Dft_shift = fftshift(X(n));
     stem(n_shift,abs((Dft_shift)),'b', 'LineWidth', 2);
-    ylabel("abs(Xk or DFT(x))");
-    xlabel("k");
     hold on;
     
     stem(n_shift,abs(X_k(n_shift)),'r', 'LineWidth', 2);
