@@ -12,12 +12,26 @@
 - Fase
 - Série de fourier
 	- Condições de diritchlet
-	- Propriedades de integrais seno com cosseno
-		- seno
-		- cosseno
-		- seno seno
+	- Propriedades de integrais seno com cosseno $w_o = 2 \pi/T$
+		-  $\int^{T/2}_{-T/2}sen(mw_ot)dt$=0, for all m
+		- $\int^{T/2}_{-T/2}cos(mw_ot)dt$=0, for $m\neq0$
+		-  
+		 $$
+			\int^{T/2}_{-T/2}sen(mw_ot)\times sen(nw_ot) dt =  
+	         \begin{cases}
+	         0 , \ m \neq n\\
+	         T/2, \ m = n \neq 0
+	         \end{cases}
+			$$=, for all m
 		- cosseno cosseno
-		- seno cosseno
+		 $$
+			\int^{T/2}_{-T/2}cos(mw_ot)\times cos(nw_ot) dt =  
+	         \begin{cases}
+	         0 , \ m \neq n\\
+	         T/2, \ m = n \neq 0
+	         \end{cases}
+			$$
+		- seno cosseno  $\int^{T/2}_{-T/2}sen(mw_ot)\times cos(nw_ot)dt$=0, for all m and n
 	- trigonométrica
 		- $w_o = 2\pi f$
 		- $x(t) = \frac{a_0}{2} + \sum_{n=1}^{\infty}a_ncos(nw_ot)+ b_nsin(nw_ot), \ n={1,2,3,...}$
