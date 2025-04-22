@@ -1,0 +1,30 @@
+clc; clear; close all;
+
+x_vector = [0,1,0,-1,0,1,0,-1]; %cases 2 and 4 only have 2 points
+
+N_1_to_4 = [8,6,8,6];
+
+
+% Discrete fourier
+% X(k) = sum_{n=0}^_{N-1} x(n) e^{-j2pikn/N}, k = {0,1,2,..., N-1}
+
+for k:N-1
+    for n:N-1
+        
+
+
+
+%xlabel("k");
+%ylabel("Xk");
+%k_values = 0:N_1_to_4(1);
+%plot(k_values,real(X(k_values,N_1_to_4(1))));
+%legend;
+
+
+
+
+
+
+
+
+
