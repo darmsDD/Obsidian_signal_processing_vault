@@ -3,7 +3,7 @@
  - Contínuos e discretos
 	- determinístico (periódico, não periódico (transitório, quase-periódico)): o comportamento do sinal no futuro pode ser predito por comportamentos no passado, isto é, tem um padrão.
 	- aleatório (estacionário, não estacionário): o comportamento do sinal não tem um padrão, assim, não podemos predizer seu comportamento futuro.
-- Os sinais podem ser entendidos muitas vezes como: um sinal deterministíco misturado com um ruído aleatório.
+- Os [[Sinal]] podem ser entendidos muitas vezes como: um sinal deterministíco misturado com um ruído aleatório.
 
 
 ## Métodos de processamento de sinais
@@ -53,5 +53,6 @@
 	- potência média: é 0, pois, como o sinal é não periódico, pode-se considerar um período $T = \infty$. Assim, $\frac{1}{T}\int_{-T/2}^{T/2}|x(t)|^2dt$, terá $\frac{1}{\infty}$ e isso é 0.
 	- energia: $\int_{-\infty}^{\infty}|x(t)|^2$, mesma fórmula de antes, mas agora T -> $\pm \infty$ e infinito /2 é infinito.
 - Sinais Aleatórios estacionários
+	- A média do sinal se mantém constante ao longo do tempo.
 	- potência média: $\int_{-T/2}^{T/2}|x(t)|^2$, neste caso não pense em T como o período de um sinal período, mas sim como o comprimento em tempo de uma amostra x(t). 
 	- energia: para t -> $\pm \infty$, a energia será infinita, e para um intervalo ela será variável.
