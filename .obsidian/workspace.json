@@ -8,29 +8,41 @@
         "type": "tabs",
         "children": [
           {
-            "id": "c5beac895feb9cc1",
+            "id": "bf6599112e3c09ab",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "release-notes",
               "state": {
-                "file": "images/Xk_k_vs_fk.png"
+                "currentVersion": "1.8.10"
               },
-              "icon": "lucide-image",
-              "title": "Xk_k_vs_fk"
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.8.10"
             }
           },
           {
-            "id": "c00e015fbe4ab4e6",
+            "id": "b8444c6695021775",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "split-diff-view",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
-                "mode": "source",
-                "source": false
+                "aFile": "Aula 2/Aula2.excalidraw.md",
+                "bFile": "Aula 2/Aula2.excalidraw.md",
+                "aRef": ""
               },
-              "icon": "lucide-file",
-              "title": "conflict-files-obsidian-git"
+              "icon": "diff",
+              "title": "Diff: Aula2.excalidraw"
+            }
+          },
+          {
+            "id": "a7d1bbd10b283a85",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Aula 2/PSinais_Aula2_1S2020.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "PSinais_Aula2_1S2020"
             }
           }
         ],
@@ -91,7 +103,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 455.5
+    "width": 455.5,
+    "collapsed": true
   },
   "right": {
     "id": "c2ac1b23dc8328aa",
@@ -216,7 +229,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 419.5
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -231,10 +244,19 @@
       "juggl:Juggl global graph": false
     }
   },
-  "active": "c00e015fbe4ab4e6",
+  "active": "b8444c6695021775",
   "lastOpenFiles": [
-    "images/Xk_k_vs_fk.png",
+    "Aula 2/Aula2.excalidraw.md",
+    "Aula 2/PSinais_Aula2_1S2020.pdf",
+    "Aula 2/Drawing 2025-04-23 15.01.39.excalidraw.md",
+    "Aula 2/O que anotar.md",
+    "Pasted Image 20250423153030_693.png",
+    "Sinais e Sistemas Lineares 2ª edição B. P. Lathi.pdf.part",
+    "Understanding Digital Signal Processing - Lyon.pdf",
+    "Sinais e Sistemas Lineares 2ª edição B. P. Lathi.pdf",
+    "Signals and Systems - Oppenheim-.pdf",
     "conflict-files-obsidian-git.md",
+    "images/Xk_k_vs_fk.png",
     "Lista2/exerc4.asv",
     "Lista2/Lista de exercícios 2_250417_172855.pdf",
     "images/siso.png",
@@ -242,26 +264,20 @@
     "Lista2/IM331_Lista2_1S2025.pdf",
     "Aula 1/Aula1.excalidraw.md",
     "Dúvidas/Aulas.md",
-    "Aula 2/O que anotar.md",
     "Aula 1/Vetores Girantes no plano complexo.md",
     "Aula 1/Sinal.md",
     "Aula 1/Série de Fourier.md",
     "Aula 1/PSinais_Aula1_1S2020.pdf",
     "Aula 1/Processamento de sinais.md",
-    "Aula 2/PSinais_Aula2_1S2020.pdf",
     "Aula2/Tipos de sinal.md",
     "Aula2/Potência de um sinal.md",
     "Aula2/Energia de um sinal.md",
     "Aula 1/Identificação de sistemas.md",
     "Aula 1/O que anotar.md",
     "Aula 3/A serem feitos.md",
-    "Aula 4/PSinais_Aula4_1S2020.pdf",
     "Aula 4/Filtros.md",
     "Aula 4/A serem feitos.md",
     "Aula 5/SinalAmostrado_Sequencia.excalidraw.md",
-    "Lista2/Lista de exercícios 2_250417_154718.pdf",
-    "Lista2/exerc1.asv",
-    "Lista2/teste.m",
     "Lista2/exerc1_mse.png",
     "Lista2/exerc1_32points.png",
     "Lista2/exerc1_16points.png",
@@ -271,13 +287,10 @@
     "images/outro_exemplo_zero_padding.png",
     "Aula 5/Teorema de Shannon (Reconstrução do sinal).md",
     "images/zero_padding4.png",
-    "images/zero_padding3.png",
     "Aula 5/Zero padding.md",
     "Aula 5/Relação entre TF de uma sequência e TF de uma função contínua.md",
     "Aula 5/Transformada de Fourier de uma sequência.md",
     "Aula 5/Transformada de Fourier Discreta.md",
-    "Aula 5/Untitled.md",
-    "Aula 5/Rebatimento ou Aliasing.md",
     "Untitled.canvas"
   ]
 }
