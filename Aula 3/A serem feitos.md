@@ -1,7 +1,16 @@
+- Soma parcial da série de fourier
+	- Fenômeno de gibbs
 - Potência de um sinal
+	- Sinal de potência
 - Energia de um sinal
-- Teorema de Parseval
+	- Sinal de energia
+- Teorema de Parseval 
+	- Nenhuma potência é perdida na transformação do sinal no tempo para a frequência.
+	- $$\frac{1}{T}\int_{-T/2}^{T/2} |x(t)|^2 dt = \sum_{k=-\infty}^{\infty}|X_k|^2 $$
 - Transformada de Fourier
+	- Definição: limite da série de fourier
+	- Fórmulas
+	- Propriedades
 - Função Delta de Dirac
 - Convolução
 - Propriedades da TF

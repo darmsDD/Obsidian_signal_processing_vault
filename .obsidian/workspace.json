@@ -11,42 +11,17 @@
             "id": "bf6599112e3c09ab",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.8.10"
+                "file": "Aula 3/A serem feitos.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.8.10"
-            }
-          },
-          {
-            "id": "b8444c6695021775",
-            "type": "leaf",
-            "state": {
-              "type": "split-diff-view",
-              "state": {
-                "aFile": "Aula 2/Aula2.excalidraw.md",
-                "bFile": "Aula 2/Aula2.excalidraw.md",
-                "aRef": ""
-              },
-              "icon": "diff",
-              "title": "Diff: Aula2.excalidraw"
-            }
-          },
-          {
-            "id": "a7d1bbd10b283a85",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Aula 2/PSinais_Aula2_1S2020.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "PSinais_Aula2_1S2020"
+              "icon": "lucide-file",
+              "title": "A serem feitos"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -103,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 455.5,
-    "collapsed": true
+    "width": 455.5
   },
   "right": {
     "id": "c2ac1b23dc8328aa",
@@ -244,8 +218,12 @@
       "juggl:Juggl global graph": false
     }
   },
-  "active": "b8444c6695021775",
+  "active": "bf6599112e3c09ab",
   "lastOpenFiles": [
+    "Aula 1/Série de Fourier.md",
+    "Aula 3/A serem feitos.md",
+    "Aula 3/PSinais_Aula3_1S2020.pdf",
+    "Aula 3/PSinais_Aula3-2_1S2020.pdf",
     "Aula 2/Aula2.excalidraw.md",
     "Aula 2/PSinais_Aula2_1S2020.pdf",
     "Aula 2/Drawing 2025-04-23 15.01.39.excalidraw.md",
@@ -261,20 +239,16 @@
     "Lista2/Lista de exercícios 2_250417_172855.pdf",
     "images/siso.png",
     "apostila_sinais_2008_ind_ref_capa.pdf",
-    "Lista2/IM331_Lista2_1S2025.pdf",
     "Aula 1/Aula1.excalidraw.md",
     "Dúvidas/Aulas.md",
     "Aula 1/Vetores Girantes no plano complexo.md",
     "Aula 1/Sinal.md",
-    "Aula 1/Série de Fourier.md",
-    "Aula 1/PSinais_Aula1_1S2020.pdf",
     "Aula 1/Processamento de sinais.md",
     "Aula2/Tipos de sinal.md",
     "Aula2/Potência de um sinal.md",
     "Aula2/Energia de um sinal.md",
     "Aula 1/Identificação de sistemas.md",
     "Aula 1/O que anotar.md",
-    "Aula 3/A serem feitos.md",
     "Aula 4/Filtros.md",
     "Aula 4/A serem feitos.md",
     "Aula 5/SinalAmostrado_Sequencia.excalidraw.md",
