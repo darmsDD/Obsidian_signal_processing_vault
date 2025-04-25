@@ -11,6 +11,18 @@
             "id": "bf6599112e3c09ab",
             "type": "leaf",
             "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Aula 3/Drawing 2025-04-25 14.19.16.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2025-04-25 14.19.16.excalidraw"
+            }
+          },
+          {
+            "id": "d80d44e7a40c989f",
+            "type": "leaf",
+            "state": {
               "type": "markdown",
               "state": {
                 "file": "Aula 3/A serem feitos.md",
@@ -220,11 +232,14 @@
   },
   "active": "bf6599112e3c09ab",
   "lastOpenFiles": [
-    "Aula 1/Série de Fourier.md",
+    "Aula 5/SinalAmostrado_Sequencia.excalidraw.md",
+    "Aula 3/Drawing 2025-04-25 14.19.16.excalidraw.md",
     "Aula 3/A serem feitos.md",
+    "Aula 2/Aula2.excalidraw.md",
+    "output.png",
+    "Aula 1/Série de Fourier.md",
     "Aula 3/PSinais_Aula3_1S2020.pdf",
     "Aula 3/PSinais_Aula3-2_1S2020.pdf",
-    "Aula 2/Aula2.excalidraw.md",
     "Aula 2/PSinais_Aula2_1S2020.pdf",
     "Aula 2/Drawing 2025-04-23 15.01.39.excalidraw.md",
     "Aula 2/O que anotar.md",
@@ -251,7 +266,6 @@
     "Aula 1/O que anotar.md",
     "Aula 4/Filtros.md",
     "Aula 4/A serem feitos.md",
-    "Aula 5/SinalAmostrado_Sequencia.excalidraw.md",
     "Lista2/exerc1_mse.png",
     "Lista2/exerc1_32points.png",
     "Lista2/exerc1_16points.png",
@@ -260,11 +274,9 @@
     "Aula 5/Leakage.md",
     "images/outro_exemplo_zero_padding.png",
     "Aula 5/Teorema de Shannon (Reconstrução do sinal).md",
-    "images/zero_padding4.png",
     "Aula 5/Zero padding.md",
     "Aula 5/Relação entre TF de uma sequência e TF de uma função contínua.md",
     "Aula 5/Transformada de Fourier de uma sequência.md",
-    "Aula 5/Transformada de Fourier Discreta.md",
     "Untitled.canvas"
   ]
 }

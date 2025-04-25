@@ -1,5 +1,5 @@
 - Soma parcial da série de fourier
-	- Fenômeno de gibbs
+	- Fenômeno de gibbs: overshoot nos pontos de descontinuidade em aproximadamente 10%
 - Potência de um sinal
 	- Sinal de potência
 - Energia de um sinal
@@ -7,13 +7,25 @@
 - Teorema de Parseval 
 	- Nenhuma potência é perdida na transformação do sinal no tempo para a frequência.
 	- $$\frac{1}{T}\int_{-T/2}^{T/2} |x(t)|^2 dt = \sum_{k=-\infty}^{\infty}|X_k|^2 $$
+	- Nenhuma energia é perdida na transformação do sinal no tempo para a frequência.
+		$$\int_{-\infty}^{\infty} |x(t)|^2 dt = \int_{-\infty}^{\infty} |X(f)|^2 df$$
 - Transformada de Fourier
 	- Definição: limite da série de fourier
 	- Fórmulas
 	- Propriedades
+	- efeito do espalhamento reverso: sinal estreito no tempo se espalha na frequência, sinal espalhado no tempo se estreira na frequência.
 - Função Delta de Dirac
-- Convolução
+	- Propriedades
+- Pseudo transformada de fourier
 - Propriedades da TF
+	- mudança de escala no tempo
+	- tempo reverso
+	- deslocamento no tempo
+	- deslocamento na frequência (modulação ou multiplicação)
+	- diferenciação
+- Importância da fase
+- Ecos
+- Convolução
 - Janelamento
 	- Não entendi muito bem o efeito do janelamento no sinal.
 - Fórmula de Poisson
