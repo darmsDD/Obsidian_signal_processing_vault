@@ -26,6 +26,8 @@
 - Importância da fase
 - Ecos
 - Convolução
+	- fórmula
+	- propriedades
 - Janelamento
 	- Não entendi muito bem o efeito do janelamento no sinal.
 - Fórmula de Poisson
