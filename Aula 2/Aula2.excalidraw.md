@@ -118,7 +118,7 @@ c9d7510de2dd944e516c06fdefe335d31b31baa5: $$x^2(t)$$
 
 03b51aa97e33cc2192823873f5d2b7970b8c363a: $$x(t)  = x(t + nT), \ t \in \mathbb{Z}$$
 
-a866e32407c4525f4834025fac30de3719f0eac3: [[Pasted Image 20250423153030_693.png]]
+a866e32407c4525f4834025fac30de3719f0eac3: [[energia_potencia_sinais.png]]
 
 %%
 ## Drawing

@@ -45,7 +45,3 @@ Então se o período é igual a $2\pi$, a função x(t) completará um ciclo a c
 
 **Fase**
 É a posição atual de uma onda em seu ciclo em um determinado instante de tempo, medida em radianos (rad) ou graus (º).
-
-
-
-**Tipos de sinais**

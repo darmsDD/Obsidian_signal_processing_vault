@@ -11,26 +11,38 @@
             "id": "bf6599112e3c09ab",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "excalidraw",
               "state": {
-                "aFile": "Aula 3/A serem feitos.md",
-                "bFile": "Aula 3/A serem feitos.md",
-                "aRef": ""
+                "file": "Aula 3/Drawing 2025-04-25 14.19.16.excalidraw.md"
               },
-              "icon": "diff",
-              "title": "Diff: A serem feitos"
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2025-04-25 14.19.16.excalidraw"
             }
           },
           {
-            "id": "d80d44e7a40c989f",
+            "id": "c1c6808184f5e88d",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "Aula 2/Aula2.excalidraw.md"
+                "file": "Aula 3/A serem feitos.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "excalidraw-icon",
-              "title": "Aula2.excalidraw"
+              "icon": "lucide-file",
+              "title": "A serem feitos"
+            }
+          },
+          {
+            "id": "4053699071798a04",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Aula 3/PSinais_Aula3-2_1S2020.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "PSinais_Aula3-2_1S2020"
             }
           }
         ]
@@ -152,12 +164,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Aula 3/Drawing 2025-04-25 14.19.16.excalidraw.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Drawing 2025-04-25 14.19.16.excalidraw"
             }
           },
           {
@@ -166,8 +179,8 @@
             "state": {
               "type": "juggl_nodes",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "ag-node-list",
+              "title": "Juggl nodes"
             }
           },
           {
@@ -176,8 +189,8 @@
             "state": {
               "type": "juggl_style",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "ag-style",
+              "title": "Juggl style"
             }
           },
           {
@@ -230,46 +243,46 @@
       "juggl:Juggl global graph": false
     }
   },
-  "active": "bf6599112e3c09ab",
+  "active": "ee6320307ef372b6",
   "lastOpenFiles": [
     "Aula 3/A serem feitos.md",
-    "Aula 3/PSinais_Aula3_1S2020.pdf.part",
-    "Aula 2/Aula2.excalidraw.md",
     "Aula 3/Drawing 2025-04-25 14.19.16.excalidraw.md",
+    "Aula 3/PSinais_Aula3-2_1S2020.pdf",
+    "Aula 5/PSinais_Aula4_2_1S2018.pdf",
+    "images/poisson8.png",
+    "images/poisson.png",
+    "Aula 4/PSinais_Aula4_1S2020.pdf",
+    "Aula 2/PSinais_Aula2_1S2020.pdf",
+    "Aula 3/PSinais_Aula3_1S2020.pdf",
+    "images/janelamento 4.png",
+    "images/poisson7.png",
+    "images/poisson6.png",
+    "images/poisson5.png",
+    "images/poisson4.png",
+    "images/poisson3.png",
+    "images/poisson2.png",
+    "Aula 6/janelamento6.png",
+    "Aula 2/O que anotar.md",
+    "Aula 2/Drawing 2025-04-23 15.01.39.excalidraw.md",
+    "Aula 3/PSinais_Aula3_1S2020.pdf.part",
+    "apostila_sinais_2008_ind_ref_capa.pdf",
+    "Aula 2/Aula2.excalidraw.md",
+    "Aula 1/Série de Fourier.md",
+    "Aula 1/Processamento de sinais.md",
+    "Aula 1/PSinais_Aula1_1S2020.pdf",
+    "Aula 1/Vetores Girantes no plano complexo.md",
+    "Aula 1/Sinal.md",
+    "Aula 1/O que anotar.md",
+    "Aula 1/Identificação de sistemas.md",
     "Aula 5/aula5.m",
     "lista2/IM331_Lista2_1S2025.pdf",
-    "IM331Programa1sem2025_v2 .pdf",
-    "Livros/Hwei P. Hsu - Fourier Analysis (1970, Simon and Schuster) - libgen.li.pdf",
-    "Livros/Frequency Analysis - Randall.pdf",
-    "Livros/Applied Fourier Analysis (Books for Professionals) -- Hwei P_ Hsu -- Harcourt Brace Jovanovich coll.pdf",
-    "lista2/exerc1.asv",
-    "lista2/exerc5.png",
-    "lista2/exerc5.m",
-    "lista2/teste.m",
-    "lista2/exerc1_mse.png",
-    "lista2/exerc1_32points.png",
-    "lista2/exerc1_16points.png",
-    "lista2/exerc1_8points.png",
-    "lista1/imagens/q9_module.png",
-    "lista1/imagens/q9_ft_xt_lt.png",
-    "lista1/imagens/q6_module.png",
-    "lista1/imagens/q5_module.png",
-    "lista1/imagens/q5_ft_xt.png",
     "Aula 5/SinalAmostrado_Sequencia.excalidraw.md",
-    "Aula 1/Série de Fourier.md",
-    "Aula 2/Drawing 2025-04-23 15.01.39.excalidraw.md",
-    "Aula 2/O que anotar.md",
     "conflict-files-obsidian-git.md",
     "Aula 1/Aula1.excalidraw.md",
     "Dúvidas/Aulas.md",
-    "Aula 1/Vetores Girantes no plano complexo.md",
-    "Aula 1/Sinal.md",
-    "Aula 1/Processamento de sinais.md",
     "Aula2/Tipos de sinal.md",
     "Aula2/Potência de um sinal.md",
     "Aula2/Energia de um sinal.md",
-    "Aula 1/Identificação de sistemas.md",
-    "Aula 1/O que anotar.md",
     "Aula 4/Filtros.md",
     "Aula 4/A serem feitos.md",
     "Aula 5/Leakage.md",
