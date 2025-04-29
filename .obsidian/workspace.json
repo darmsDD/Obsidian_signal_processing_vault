@@ -11,12 +11,14 @@
             "id": "bf6599112e3c09ab",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "Aula 3/Drawing 2025-04-25 14.19.16.excalidraw.md"
+                "file": "Aula 4/A serem feitos.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "excalidraw-icon",
-              "title": "Drawing 2025-04-25 14.19.16.excalidraw"
+              "icon": "lucide-file",
+              "title": "A serem feitos"
             }
           },
           {
@@ -37,15 +39,18 @@
             "id": "4053699071798a04",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "split-diff-view",
               "state": {
-                "file": "Aula 3/PSinais_Aula3-2_1S2020.pdf"
+                "aFile": "Aula 3/Drawing 2025-04-25 14.19.16.excalidraw.md",
+                "bFile": "Aula 3/Drawing 2025-04-25 14.19.16.excalidraw.md",
+                "aRef": ""
               },
-              "icon": "lucide-file-text",
-              "title": "PSinais_Aula3-2_1S2020"
+              "icon": "diff",
+              "title": "Diff: Drawing 2025-04-25 14.19.16.excalidraw"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -164,13 +169,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Aula 3/Drawing 2025-04-25 14.19.16.excalidraw.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Drawing 2025-04-25 14.19.16.excalidraw"
+              "title": "Outline"
             }
           },
           {
@@ -243,17 +247,19 @@
       "juggl:Juggl global graph": false
     }
   },
-  "active": "ee6320307ef372b6",
+  "active": "4053699071798a04",
   "lastOpenFiles": [
+    "Aula 3/PSinais_Aula3_1S2020.pdf",
     "Aula 3/A serem feitos.md",
     "Aula 3/Drawing 2025-04-25 14.19.16.excalidraw.md",
     "Aula 3/PSinais_Aula3-2_1S2020.pdf",
+    "Aula 4/A serem feitos.md",
+    "Aula 4/PSinais_Aula4_1S2020.pdf",
+    "Aula 4/Filtros.md",
     "Aula 5/PSinais_Aula4_2_1S2018.pdf",
     "images/poisson8.png",
     "images/poisson.png",
-    "Aula 4/PSinais_Aula4_1S2020.pdf",
     "Aula 2/PSinais_Aula2_1S2020.pdf",
-    "Aula 3/PSinais_Aula3_1S2020.pdf",
     "images/janelamento 4.png",
     "images/poisson7.png",
     "images/poisson6.png",
@@ -283,8 +289,6 @@
     "Aula2/Tipos de sinal.md",
     "Aula2/Potência de um sinal.md",
     "Aula2/Energia de um sinal.md",
-    "Aula 4/Filtros.md",
-    "Aula 4/A serem feitos.md",
     "Aula 5/Leakage.md",
     "Aula 5/Teorema de Shannon (Reconstrução do sinal).md",
     "Aula 5/Zero padding.md",
