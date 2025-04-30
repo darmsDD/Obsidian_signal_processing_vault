@@ -8,7 +8,6 @@
 - Equação Diferencial do Sistema
 	- São usadas as transformadas de Laplace e Fourier para identificar o sistema no lugar das equações diferenciais. Para isso são necessárias H(s) e H(f), que são as transformadas de laplace e fourier da função de resposta ao impulso h(t).
 	- Causalidade:
-- Integral de Duhamel
 - Função de Resposta em Frequência (FRF)
 - Filtros
 	
