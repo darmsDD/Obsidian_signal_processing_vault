@@ -55,7 +55,7 @@ Um sinal periódico possui energia infinita para o sinal todo, mas energia finit
 			$$\mathcal{F}[x(-t)] = X(-f) = X^*(f)$$
 		, sendo $X^*$ o conjugado. Lembrando que X é um número complexo.
 
-- deslocamento no tempo:
+- deslocamento no tempo se x(t) é real:
 	 $$\mathcal{F}[x(t- t_0)] = e^{-j2\pi ft_0}\times X(f)$$
 
 - deslocamento na frequência (modulação ou multiplicação):
@@ -137,6 +137,9 @@ $$
 x(t) * h(t) = \int_{-\infty}^{\infty}x(\tau)\times h(t-\tau)d\tau = \int_{-\infty}^{\infty}x(t - \tau)\times h(\tau)d\tau = h(t) * x(t)
 $$
 
+![[convolucao.png]]
+
+
 Suas propriedades são:
 - A convolução no tempo é multiplicação na frequência:
 $$ x(t) * h(t) \xrightarrow{\mathcal{F}} X(f) \times H(f)$$
@@ -152,6 +155,8 @@ $$ x(t) \times h(t) \xrightarrow{\mathcal{F}} X(f) * H(f)$$
 - A função impulso é a identidade da convolução:
 	 $X(f)\otimes \delta(f) = X(f)$
      $X(f) \otimes \delta(f - f_0) = X(f - f_0)$
+
+
 ### Janelamento
 
 As transformadas de fourier assum um sinal de duração infinita, isto é, de mais a menos infinito. Porém, em um sinal real, temos apenas uma amostra de dados. A nossa amostra não contém x(t), com $t \to \pm \infty$ .
@@ -196,7 +201,7 @@ Quando um sinal é composto de elementos de frequências vizinhas, neste caso 2 
 
 
 
-![[Aula 6/janelamento6.png]]
+![[janelamento6.png]]
 
 
 
