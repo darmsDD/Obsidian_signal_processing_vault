@@ -8,7 +8,7 @@ Veja na figura b que o período de um sinal interferiu com o outro. Para resolve
 $$
 f_a > 2\times f_{max}
 $$
-Ou seja, a frequência máxima de um sinal é deve ser menor que metade da frequência de amostragem: $f_{max} \lt \frac{fa}{2}$ 
+Ou seja, a frequência máxima de um sinal deve ser menor que metade da frequência de amostragem: $f_{max} \lt \frac{fa}{2}$ 
 
 
 ### Como combater o aliasing

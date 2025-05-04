@@ -18,9 +18,9 @@ A inversa da [[Transformada de fourier]] de x(t) é:
 
 $$
 \begin{align}
-x(t) &= \int^{\infty}_{-\infty}X(f)\times e^{j2\pi ft} \\
+x(t) &= \int^{\infty}_{-\infty}X(f)\times e^{j2\pi ft} df \\
 \text{Com t} &= n\times \Delta t \\
-x(n) &= \int^{\infty}_{-\infty}X(f)\times e^{j2\pi fn\times \Delta t} \\
+x(n) &= \int^{\infty}_{-\infty}X(f)\times e^{j2\pi fn\times \Delta t} df\\
 \text{Lembrando que }x(n) &= x(n\times \Delta t) \\
 \end{align}
 $$
@@ -29,11 +29,11 @@ $$
 Igualando os 2 x(n)
 $$
 \begin{align}
-x(n) = \int^{\infty}_{-\infty}X(f)\times e^{j2\pi fn\times \Delta t} = \frac{1}{f_a}\int_{-f_a/2}^{f_a/2}\overline{X}(f) \times e^{j2\pi fn\Delta t} \\
+x(n) = \int^{\infty}_{-\infty}X(f)\times e^{j2\pi fn\times \Delta t} df = \frac{1}{f_a}\int_{-f_a/2}^{f_a/2}\overline{X}(f) \times e^{j2\pi fn\Delta t} df \\
 \text{Substituindo } x(n) = x(n \times \Delta n) \text{ por x(t).} \\
-x(t) = \int^{\infty}_{-\infty}X(f)\times e^{j2\pi ft} = \frac{1}{f_a}\int_{-f_a/2}^{f_a/2}\overline{X}(f) \times e^{j2\pi ft} \\
-x(t) = \frac{1}{f_a}\int_{-f_a/2}^{f_a/2}\sum^\infty_{-\infty} x(n) \times e^{-j2\pi fn\Delta t}\times e^{j2\pi ft} \\
-x(t) = \sum^\infty_{-\infty}x(n)\int_{-f_a/2}^{f_a/2} \frac{1}{f_a} \times e^{(j2\pi f)(t - n\Delta t)}\\
+x(t) = \int^{\infty}_{-\infty}X(f)\times e^{j2\pi ft} df = \frac{1}{f_a}\int_{-f_a/2}^{f_a/2}\overline{X}(f) \times e^{j2\pi ft} df \\
+x(t) = \frac{1}{f_a}\int_{-f_a/2}^{f_a/2}\sum^\infty_{-\infty} x(n) \times e^{-j2\pi fn\Delta t}\times e^{j2\pi ft} df \\
+x(t) = \sum^\infty_{-\infty}x(n)\int_{-f_a/2}^{f_a/2} \frac{1}{f_a} \times e^{(j2\pi f)(t - n\Delta t)} df\\
 x(t) = \sum^\infty_{-\infty}x(n)\frac{sin[\pi f_a(t-n\Delta t)]}{\pi f_a(t-n\Delta t)}\\
 
 \end{align}

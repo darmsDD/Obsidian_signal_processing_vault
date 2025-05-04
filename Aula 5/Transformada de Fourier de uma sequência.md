@@ -34,7 +34,7 @@ $$
 $$
 
 
-**Note que a função $\overline{X(f)}$ é periódica na frequência, $\overline{X}(f) = \overline{X}(f + kfa))$.**
+**Note que a função $\overline{X(f)}$ é periódica na frequência, $\overline{X}(f) = \overline{X}(f + kfa)$.**
 
 
 

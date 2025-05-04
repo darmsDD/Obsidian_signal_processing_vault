@@ -12,4 +12,5 @@
 ## Aula 5 
 
 - Por que é necessário dividir a DFT discreta por N, isto é, o número de pontos, para poder comparar os valores com os coeficientes da série de fourier Xk?
-- 
+- Com combater o aliasing [[Rebatimento ou Aliasing]] 
+	- então $\textcolor{red}{a \ nossa \ largura \ de \ banda \ seria \ de \ 1 \ a \ 800hz? A \ frequência \ de \ corte \ seria \ 800hz?}$.

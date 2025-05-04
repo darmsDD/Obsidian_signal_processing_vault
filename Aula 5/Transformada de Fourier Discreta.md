@@ -22,6 +22,23 @@ X(k) &= \sum_{n=0}^{N-1}x(n)\times e^{\frac{-j2\pi kn}{N}}, k \in \{0,1,2,...,N-
 
 \end{align}
 $$
+**Lembrando que metade dos pontos correspondem as frequências negativas. FFT_shift.**
+X(k) = [1 2 3 4 5 6] => [4 5 6 1 2 3]
+X(-3) = 4, X(-2) = 5, X(-1) = 6, X(0) = 1, X(1) = 2 e X(2) = 3
+Para ver na frequência ao invés de k na hora de plotar, multiplicamos por $f_0 = 1/T$
+X(fk)
+$X(-3f_0) = 4, X(-2f_0) = 5, X(-1f_0) = 6, X(0) = 1, X(1f_0) = 2 \ e \ X(2f_0) = 3$
+
+X(k) = [1 2 3 4 5 6 7] => [5 6 7 1 2 3 4],
+X(-3) = 5, X(-2) = 6, X(-1) = 7, X(0) = 1, X(1) = 2 , X(2) = 3 e X(3) = 4
+Para ver na frequência ao invés de k na hora de plotar, multiplicamos por $f_0 = 1/T$
+X(fk)
+$X(-3f_0) = 5, X(-2f_0) = 6, X(-1f_0) = 7, X(0) = 1, X(1f_0) = 2 , X(2f_0) = 3 \ e \ X(3f_0) = 4$
+
+
+**Neste exemplo eu não considerei a paridade da função X(k), eu priorizei a visualização dos pontos.**
+
+
 
 ## Inversa da Transformada de Fourier discreta
 
@@ -63,16 +80,11 @@ $$
 X_r(N-k) &= X_r(k) \\
 X_i(N-k) &= -X_i(k) \\
 X(N-k) &= X_r(k) - jX_i(k) = X(k)^* \\ \\
-
-|X(N-k)| &= |X(k)| \\
-  \\
-Arg(X(N-k))& = -Arg(X(k))
-
 \end{align}
 $$
 
 X(N-k) é decomposto em uma parte real e uma parte imaginária imaginária em X(k) isto é,
-$X(N-k) = X_r(k) - jX_i(k)$ , então o cálcula da fase e módulo ficam.
+$X(N-k) = X_r(k) - jX_i(k)$ , então o cálculo da fase e módulo ficam.
 $$
 \begin{align}
 |X(N-k)| &= |X(k)| \\

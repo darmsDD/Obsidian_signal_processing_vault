@@ -5,7 +5,7 @@ Como a transformada de uma sequência é uma função periódica, podemos aplica
 $$
 \begin{align}
 X_k &= \frac{1}{T}\int_{-T/2}^{T/2}x(t)\times e^{-j2\pi kt/T} dt \\
-x(t) &= \sum_{k=-\infty}^{\infty}X_k\times e^{j2\pi kt}
+x(t) &= \sum_{k=-\infty}^{\infty}X_k\times e^{j2\pi kt/T}
 \end{align}
 $$
 
@@ -35,7 +35,7 @@ $x(n) = x(n \times \Delta t)$ nas anotações do slide.
 4- Reescrever a inversa da transformada.
 
 $$ 
-x(n\times\Delta t) = \sum_{r=-\infty}^{\infty}\int_{(2r - 1)\times fa}^{(2r + 1)\times fa} X(f)\times e^{j2\pi fn\Delta t}df
+x(n\times\Delta t) = \sum_{r=-\infty}^{\infty}\int_{(2r - 1)\times fa/2}^{(2r + 1)\times fa/2} X(f)\times e^{j2\pi fn\Delta t}df
 $$
 
 A lógica para a reescrita foi a seguinte: em vez de integrar no intervalo todo de uma vez só, isto é de $[-\infty,\infty]$,  este intervalo foi quebrado em pequenos intervalos de tamanho fa,  $-\infty \ a \ \infty$.   Exemplo:
@@ -44,13 +44,13 @@ A lógica para a reescrita foi a seguinte: em vez de integrar no intervalo todo 
 | --- | --------------- | --------------- | -------------------- |
 | 0   | fa/2            | -fa/2           | f_a                  |
 | 1   | 3fa/2           | fa/2            | f_a                  |
-| 1   | 5fa/2           | 3fa/2           | f_a                  |
+| 2   | 5fa/2           | 3fa/2           | f_a                  |
 
 
 5- Fazendo substituição de variáveis $\tau = f -rf_a$ e depois $\tau=f$, e fazendo um comparativo a série de fourier vista no passo 2, conseguimos chegar aos resultados abaixo.
 
 $$
-\overline{X}(f) = f_a\sum^\infty_{r=-\infty} X(f - rf_a) = \sum_{n=-\infty}^{\infty}x(n\times \Delta t)\times e^{-j2\pi fn\Delta t} \\
+\overline{X}(f) = f_a\sum^\infty_{r=-\infty} X(f + rf_a) = \sum_{n=-\infty}^{\infty}x(n\times \Delta t)\times e^{-j2\pi fn\Delta t} \\
 $$
 
 
