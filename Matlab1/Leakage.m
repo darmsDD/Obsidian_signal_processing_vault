@@ -15,8 +15,12 @@ fo=1.5;   %  frequencia do sinal [Hz]
 ti=0;  %  tempo inicial
 %ts=5.0;
 %ts=T-dt;  %  tempo final c/ no. inteiro de períodos (no. de ponto par)
-ts=T-20*dt;  %  tempo final gerando c/ numero não inteiro de periodos!!!
+ts=T-20*dt;   %  tempo final gerando c/ numero não inteiro de periodos!!!
 t=[ti:dt:ts];  % vetor de tempo
+
+
+
+
 omega=2*pi*fo;  %  frequencia em rad/s
 xo=10; % amplitude do sinal
 x=xo*cos(omega*t);  % função coseno
