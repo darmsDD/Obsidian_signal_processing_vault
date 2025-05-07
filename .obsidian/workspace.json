@@ -4,53 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "08bbb7e97dd11b75",
+        "id": "c4202230ee0d6465",
         "type": "tabs",
         "children": [
           {
-            "id": "bf6599112e3c09ab",
+            "id": "fd4ea6b288b4e4f3",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Aula 4/A serem feitos.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "A serem feitos"
-            }
-          },
-          {
-            "id": "c1c6808184f5e88d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Aula 3/A serem feitos.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "A serem feitos"
-            }
-          },
-          {
-            "id": "4053699071798a04",
-            "type": "leaf",
-            "state": {
-              "type": "split-diff-view",
-              "state": {
-                "aFile": "Aula 3/Drawing 2025-04-25 14.19.16.excalidraw.md",
-                "bFile": "Aula 3/Drawing 2025-04-25 14.19.16.excalidraw.md",
-                "aRef": ""
-              },
-              "icon": "diff",
-              "title": "Diff: Drawing 2025-04-25 14.19.16.excalidraw"
+              "title": "New tab"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -247,19 +214,31 @@
       "juggl:Juggl global graph": false
     }
   },
-  "active": "4053699071798a04",
+  "active": "fd4ea6b288b4e4f3",
   "lastOpenFiles": [
-    "Aula 3/PSinais_Aula3_1S2020.pdf",
-    "Aula 3/A serem feitos.md",
-    "Aula 3/Drawing 2025-04-25 14.19.16.excalidraw.md",
-    "Aula 3/PSinais_Aula3-2_1S2020.pdf",
-    "Aula 4/A serem feitos.md",
-    "Aula 4/PSinais_Aula4_1S2020.pdf",
-    "Aula 4/Filtros.md",
+    "Aula 1/Aula1.excalidraw.md",
+    "Aula 2/Aula2.excalidraw.md",
+    "Aula 3/aula3.excalidraw.md",
+    "Aula 4/aula4.excalidraw.md",
+    "Aula 5/SinalAmostrado_Sequencia.excalidraw.md",
     "Aula 5/PSinais_Aula4_2_1S2018.pdf",
+    "Aula 6/Drawing 2025-05-04 16.27.01.excalidraw.md",
+    "lista3/Lista de exercícios 3_250506_162606.pdf",
+    "Aula 3/PSinais_Aula3_1S2020.pdf",
+    "Aula 4/A serem feitos.md",
+    "Aula 3/A serem feitos.md",
+    "Aula 6/O que fazer.md",
+    "Treino_prova1/lista2_1_com_zoom.m",
+    "Treino_prova1/aproximacao_coeficiente_fourier.asv",
+    "Treino_prova1/aproximacao_coeficiente_fourier.m",
+    "Treino_prova1/plot_transformada.asv",
+    "Treino_prova1/plot_transformada.m",
+    "Treino_prova1/serie_fourier.asv",
+    "Treino_prova1/serie_fourier.m",
+    "Aula 3/Drawing 2025-04-25 14.19.16.excalidraw.md",
+    "Aula 4/Filtros.md",
     "images/poisson8.png",
     "images/poisson.png",
-    "Aula 2/PSinais_Aula2_1S2020.pdf",
     "images/janelamento 4.png",
     "images/poisson7.png",
     "images/poisson6.png",
@@ -270,30 +249,18 @@
     "Aula 6/janelamento6.png",
     "Aula 2/O que anotar.md",
     "Aula 2/Drawing 2025-04-23 15.01.39.excalidraw.md",
-    "Aula 3/PSinais_Aula3_1S2020.pdf.part",
-    "apostila_sinais_2008_ind_ref_capa.pdf",
-    "Aula 2/Aula2.excalidraw.md",
     "Aula 1/Série de Fourier.md",
     "Aula 1/Processamento de sinais.md",
-    "Aula 1/PSinais_Aula1_1S2020.pdf",
     "Aula 1/Vetores Girantes no plano complexo.md",
     "Aula 1/Sinal.md",
     "Aula 1/O que anotar.md",
     "Aula 1/Identificação de sistemas.md",
-    "Aula 5/aula5.m",
-    "lista2/IM331_Lista2_1S2025.pdf",
-    "Aula 5/SinalAmostrado_Sequencia.excalidraw.md",
     "conflict-files-obsidian-git.md",
-    "Aula 1/Aula1.excalidraw.md",
     "Dúvidas/Aulas.md",
     "Aula2/Tipos de sinal.md",
     "Aula2/Potência de um sinal.md",
     "Aula2/Energia de um sinal.md",
     "Aula 5/Leakage.md",
-    "Aula 5/Teorema de Shannon (Reconstrução do sinal).md",
-    "Aula 5/Zero padding.md",
-    "Aula 5/Relação entre TF de uma sequência e TF de uma função contínua.md",
-    "Aula 5/Transformada de Fourier de uma sequência.md",
     "Untitled.canvas"
   ]
 }
