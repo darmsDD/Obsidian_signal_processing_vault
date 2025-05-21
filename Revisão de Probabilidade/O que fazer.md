@@ -85,6 +85,14 @@ Existem vários momentos estatíticos, e como foi feito no exemplo,
 
 Referência: https://estatisticafacil.org/glossario/o-que-e-momento-estatistico-definicao-e-aplicacoes/
 
+
+
+## Propriedades médias de um sinal
+
+Basicamente, queremos saber como um sinal se comporta na média, ou seja, seu comportamento estatístico esperado. Assim, usamos momentos estatísticos para descobrir os comportamentos médios.
+
+
+
 ## O que é ensemble average
 
 Seja uma variável u = u1,u2,...,uN
