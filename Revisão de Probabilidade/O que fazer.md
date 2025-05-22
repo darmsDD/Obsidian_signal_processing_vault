@@ -89,7 +89,7 @@ Referência: https://estatisticafacil.org/glossario/o-que-e-momento-estatistico-
 
 ## Propriedades médias de um sinal
 
-Basicamente, queremos saber como um sinal se comporta na média, ou seja, seu comportamento estatístico esperado. Assim, usamos momentos estatísticos para descobrir os comportamentos médios.
+Basicamente, queremos saber como um sinal se comporta na média, ou seja, seu comportamento estatístico esperado. Assim, usamos momentos estatísticos para descobrir os comportamentos médios, isto é, as propriedades médias de um sinal.
 
 
 
