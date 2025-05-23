@@ -1,4 +1,47 @@
 
+## O que é probabilidade
+
+
+
+## O que são conjuntos
+
+Um conjunto é uma coleção de itens no qual a ordem não importa.
+Exemplo: {a,b} e {b,a} são o mesmo conjunto.
+
+Um conjunto pode ser definido matematicamente como:
+$$
+\begin{align}
+A &= \{x| x\text{ satisfies some property\}} \\
+& or \\
+A &= \{x: x\text{ satisfies some property\}} \\
+\end{align}
+$$
+| e : são "such that", em português, tal que.
+
+
+$\in$: símbolo de pertence. Um elemento pertence ou não a um conjunto.
+Exemplo: A = {1 , 2 , 3, 4}, 6 $\notin$ A (6 não pertence ao conjunto A) e 2 $\in$ A (2 pertence ao conjunto A).
+
+$\subset$: símbolo de contido. Um conjunto pode estar ou não contido em outro conjunto.
+Seja A = {1,2,3} e B={1,2,3,4,5}, dizemos que $A \subset B$ (A está contido no superconjunto B) ou $B \supset A$ (O superconjunto B contém o conjunto A).
+$A \not\subset B$ A não está contido em B.
+
+Um superconjunto é um conjunto que contém um ou mais conjutos.
+
+
+Um conjunto sem elementos $\emptyset = \{\}$ é chamada de conjunto vazio ou nulo.
+
+$\forall A, \emptyset \subset A$, isto é, para qualquer conjunto A, o conjunto vazio $\emptyset$ estará contido nele. 
+
+
+Existe um conjunto universal, que contém todos os possíveis elementos sobre o que estamos estudando. Frequentemente denominado de conjunto S. Este conjunto universal também é chamada de espaço amostral.
+Exemplos: para a jogada de um dado de 6 lados, S = {1,2,3,4,5,6}, para o lance de uma moeda S = {H,T} (heads = cara, tails = coroa).
+
+
+
+
+
+
 ## Variável aleatória
 
 Uma variável aleatória X é uma função que atribui no dominío dos números reais a um elemento do espaço amostral S.
