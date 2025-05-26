@@ -56,6 +56,7 @@ Exemplos: para a jogada de um dado de 6 lados, S = {1,2,3,4,5,6}, para o lance d
 - Leis de distribuição
 	- $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
 	- $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$
+- $|A|$ = Número de elementos em um conjunto
 
 
 ### Produto cartesiano
@@ -63,6 +64,8 @@ Exemplos: para a jogada de um dado de 6 lados, S = {1,2,3,4,5,6}, para o lance d
 O produto cartesiano de dois conjuntos A e B, $A \times B$, é o conjunto de pares ordenados de A e B.
 $$A \times B = \{(x,y)|x \in A \ and \ y \in B\} $$
 Exemplo: A = {1,2,3} B = {T,H}, AxB = {(1,T),(1,H),(2,T),(2,H),(3,T),(3,H)}. Como é ordenado (1,T) é diferente de (T,1). Por isso que AxB é diferente de BxA.
+
+Se A tem M elementos e B tem N elementos, o produto cartesiano terá N vezes M elementos (**princípio da multiplicação**).
 
 ## Variável aleatória
 
