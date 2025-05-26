@@ -40,7 +40,29 @@ Exemplos: para a jogada de um dado de 6 lados, S = {1,2,3,4,5,6}, para o lance d
 
 
 
+### Operações de conjuntos
 
+- União: junta os elementos dos conjuntos
+- Interseção: pega os elementos em comum dos conjuntos
+- Complemento do conjunto A, $A^c \ or \ \overline{A}$: é o conjunto de todos os elementos que estão no conjunto universal S, mas não estão no conjunto A.
+- Subtração: A - B, retorna um conjunto com todos os elementos que estão em A, mas não em B. $A - B = A\cap B^c$
+- Mutuamente exclusivos ou disjuntos: se $A \cap B = \emptyset$.
+- Partições: Seja A um conjunto, A1 é dito partição de A se a interseção de todas as partições é $\emptyset$,mas a união resulta no conjunto A.
+  ![[Pasted image 20250526155728.png]]
+
+- Leis de morgan
+	- $(A_1 \cup A_2 \cup A_3 \cup \cdots \cup A_n)^c = A_1^c \cap A_2^c \cap A_3^c \cdots \cap A_n^c$
+	- $(A_1 \cap A_2 \cap A_3 \cap \cdots \cap A_n)^c = A_1^c \cup A_2^c \cup A_3^c \cdots \cup A_n^c$
+- Leis de distribuição
+	- $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
+	- $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$
+
+
+### Produto cartesiano
+
+O produto cartesiano de dois conjuntos A e B, $A \times B$, é o conjunto de pares ordenados de A e B.
+$$A \times B = \{(x,y)|x \in A \ and \ y \in B\} $$
+Exemplo: A = {1,2,3} B = {T,H}, AxB = {(1,T),(1,H),(2,T),(2,H),(3,T),(3,H)}. Como é ordenado (1,T) é diferente de (T,1). Por isso que AxB é diferente de BxA.
 
 ## Variável aleatória
 
