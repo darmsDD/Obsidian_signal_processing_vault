@@ -1,0 +1,27 @@
+function Rxx = Auto_correlation_function(x,dt)
+    N = length(x);
+    tau_vector = -N/2:N/2-1;
+    N_tau = length(tau_vector);
+    Rxx = zeros(1,N_tau);
+    for l=1:N_tau
+        tau = tau_vector(l);
+        x_tau = zeros(1,N+tau);
+        if (tau>=0)
+            x_tau(1:N) = x;
+        else
+            x_tau(-tau:N-tau-1) = x;
+            % tau é <0, Exemplo: tau = -3, x_tau(3:N+3-1)
+        end
+        %numerical integration
+        for n=1:N
+            Rxx(l) = Rxx(l) + x(n)*x_tau(n);
+        end
+        T = N*dt;
+        Rxx(l) = 1/T * dt * Rxx(l);
+    end
+
+end
+%x=randn(1,512*1024);
+%tau = 2;
+%dt=1e-3;
+%a = Auto_correlation_function(x,tau,dt);
