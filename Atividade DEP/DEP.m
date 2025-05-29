@@ -3,7 +3,7 @@ close all; clear all; clc;
 %Pede-se acrescentar ao script da aula de 22/5 o cálculo da DEP através da função de 
 % autocorrelação do sinal x(t). Calcular a autocorrelação 
 % através do script pela definição de média do produto de x(t) e x(t+tau).
-nb=512;
+nb=1024;
 x=randn(1,nb*1024);
 N=length(x);
 Nb=N/nb;
@@ -31,3 +31,4 @@ plot(f,S(1:Nb/2));
 hold on;
 S_auto_correlation = S_auto_correlation*8/3/nb/df;
 plot(f,S_auto_correlation(1:Nb/2));
+legend;

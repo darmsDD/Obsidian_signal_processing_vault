@@ -4,22 +4,16 @@ function Rxx = Auto_correlation_function(x,dt)
     Rxx = zeros(1,N);
     for l=1:N
         tau = tau_vector(l);
-        x_tau = zeros(1,N+abs(tau));
-        if (tau>=0)
-            x_tau(1+tau:N+tau) = x;
-        else
-            x_tau(-tau+1:N-tau) = x;
-            % tau é <0, Exemplo: tau = -3, x_tau(3:N+3-1)
-        end
         %numerical integration
         for n=1:N
-            Rxx(l) = Rxx(l) + x(n)*x_tau(n);
+            if(n+tau>0 && n+tau<=N)
+                Rxx(l) = Rxx(l) + x(n)*x(n+tau);
+            end
         end
         T = N*dt;
         % 1/T * dt * Rxx(l); = 1/(N*dt) * dt * Rxx(l) = 1/N *Rxx(l)
         Rxx(l) = 1/N * Rxx(l);
     end
-
 end
 %x=randn(1,6);
 %tau = 2;
