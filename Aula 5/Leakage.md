@@ -13,7 +13,7 @@ Com N=4, não há leakage.
 Com N=5 há leakage.
 
 
-![[leakage.png]]
+![[images/leakage.png]]
 
 
 

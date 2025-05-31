@@ -2,7 +2,7 @@ Sabe-se que a transformada de fourier de um sinal discreto nos dá $\overline{X}
 
 Por ser uma função periódica, pode acontecer o seguinte fenômeno:
 
-![[aliasing.png]]
+![[images/aliasing.png]]
 
 Veja na figura b que o período de um sinal interferiu com o outro. Para resolver basta utilizar uma frequência de amostragem 2 vezes maior que a frequência máxima do seu sinal, isto é, a **frequência de Nyquist.**
 $$
