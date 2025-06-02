@@ -138,9 +138,27 @@ Notações para o valor esperado
 $X:EX = E[X] = E(X) = \mu_X$
 
 
+### Discreto
 
+Valor esperado: EX = $\sum_{x_k \in R_X} x_kP_X(x_k)$, Sendo PX a probabilidade de X = x_k
+Variância: $Var(X) = E[(X - \mu_X)^2] = E[X^2] - [EX]^2$
+Desvio padrão: $SD(X) = \sigma_X = \sqrt{Var(X)}$
 
+**Valor experado de uma função de uma variável aleatória discreta.(LOTUS)**
 
+$$E[g(X)] = \sum_{x_k \in R_X} g(x_k)P_X(x_k)$$
+
+### Contínuo
+
+Valor esperado: EX = $\int_{-\infty}^{\infty} x \cdot f_X(x)$. Sendo $f_X(x)$, a probability density function (pdf).
+Variância: $Var(X) = E[(X - \mu_X)^2] = E[X^2] - [EX]^2$
+Desvio padrão: $SD(X) = \sigma_X = \sqrt{Var(X)}$
+
+**Valor experado de uma função de uma variável aleatória contínua.(LOTUS)**
+
+$$
+E[g(X)] = \int_{-\infty}^{\infty}g(x)\cdot f_X(x)dx
+$$
 
 
 ## o que é um momento estatístico?
@@ -183,11 +201,19 @@ Referência:https://www.youtube.com/watch?v=B2wc1Qv99Go&ab_channel=%C3%96zhan%C3
 
 
 
+## Distribuições Discretas
+
+- Bernoulli
+- Geométrica
+- binomial
 
 
+## Distribuições Contínuas
 
-
-
+- Uniforme
+- Exponencial
+### Gaussiana (Normal)
+	- CLT
 
 
 
