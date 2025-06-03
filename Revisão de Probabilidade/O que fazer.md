@@ -100,6 +100,61 @@ Logo Rx = {0,1,2,3,4,5}, o conjunto de todos os valores que a variável aleatór
 
 Referências:https://en.wikipedia.org/wiki/Random_variable
 Referências: https://www.probabilitycourse.com/chapter3/3_1_1_random_variables.php
+
+## 📘 Propriedades da CDF para Variáveis Aleatórias Discretas
+
+### 1. Limites
+
+A CDF tende a 0 no infinito negativo e a 1 no infinito positivo:
+
+
+$$
+F_X(-\infty) = 0,\quad F_X(\infty) = 1
+$$
+
+---
+
+### 2. Função não decrescente
+
+Se $\alpha \leq \beta$, então:
+
+$$
+F_X(\alpha) \leq F_X(\beta)
+$$
+
+---
+
+### 3. PMF a partir da CDF
+
+Para qualquer valor $x_k \in \mathcal{R}_X$(Range de X), existe um $\varepsilon > 0$ suficientemente pequeno tal que:
+
+$$
+F_X(x_k) - F_X(x_k - \varepsilon) = P(X = x_k)
+$$
+
+
+---
+
+### 4. Probabilidade entre dois valores
+
+Para $a < b$:
+
+$$
+P(a < X \leq b) = P(X \leq b) - P(X \leq a) = F_X(b) - F_X(a)
+$$
+
+---
+
+
+## Variáveis aleatórias contínuas
+
+Uma variável aleatória X é contínua se a sua CDF (função de distribuição acumulativa) F_X(x) é uma função contínua para todo $x \in \mathbb{R}$. 
+Vamos assumir que F_X é diferenciavel em quase todo domínio $\mathbb{R}$.
+
+
+
+
+
 ## Processo Aleatório or processo estocástico
 
 
