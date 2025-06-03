@@ -1,0 +1,34 @@
+% gera��o dos sinais de entrada e sa�da
+clear all
+close all
+N=128*1024;
+x=randn(1,N);
+dt=1e-3;
+t=0:dt:(N-1)*dt;
+X=fft(x);
+T=N*dt;
+df=1/T;
+f=(0:N/2-1)*df;
+w=2*pi*f;
+%M*y''+C*y'+K*y=x
+M=1;K=100000;C=50;
+H=1./(K-w.^2*M+1i*w*C);
+Y=H.*X(1:N/2);
+Y=[Y 0 fliplr(conj(Y(2:N/2)))];
+y=ifft(Y);
+perc=5/100;
+wn=perc*rms(y)*randn(1,N);
+y=y+wn;
+
+Nb=1024;
+nb=128;
+Tb=Nb*dt;
+dfb=1/Tb;
+fb=(0:Nb/2-1)*dfb;
+wb=2*pi*fb;
+[Sxx,Syy,Sxy]=depxyper(x,y,dt,Nb);
+H1=Sxy./Sxx;
+Coh2=abs(Sxy).^2./(Sxx.*Syy);
+subplot(2,1,1),plot(fb,20*log10(abs(H1(1:Nb/2))))
+subplot(2,1,2),plot(fb,Coh2(1:Nb/2))
+ylim([0 1.2])
