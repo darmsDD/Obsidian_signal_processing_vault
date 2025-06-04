@@ -26,6 +26,8 @@ Não está claro porque o ruído apenas na entrada não afeta, ou não aparenta 
 
 A combinação de ruídos na entrada e saída afetou os estimadores H1 e H2.
 
+O ruído de entrada, mesmo parecendo não afetar os estimadores H1 e H2, teve efeitos.
+Os valores de H1 e H2 apresentam valores diferentes, para um mesmo ruído em y, mas diferentes ruídos em x.
 
 
 ![[noisex_5_noisey_5_100.png]]

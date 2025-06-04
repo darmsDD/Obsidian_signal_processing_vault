@@ -19,10 +19,10 @@ for i=1:N_y_noise_cases
 end
 
 
-for i=1:N_x_noise_cases
-    for j=1:N_y_noise_cases
-        noisex = noisex_array(i);
-        noisey = noisey_array(j);
+for i=1:N_y_noise_cases
+    for j=1:N_x_noise_cases
+        noisex = noisex_array(j);
+        noisey = noisey_array(i);
 
         %====================================
         % Adding noise to entrance
