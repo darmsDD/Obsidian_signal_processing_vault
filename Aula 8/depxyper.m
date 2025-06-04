@@ -1,4 +1,4 @@
-function [Sxx,Syy,Sxy]=depxyper(x,y,Dt,Nb);
+function [Sxx,Syy,Sxy,Syx]=depxyper(x,y,Dt,Nb);
 
 % Densidade Inter-Espectral de Pot\^encia via DFT
 % Entrada: vetores x, y, Dt e Nb 
@@ -16,24 +16,29 @@ Han=ones(1,Nb)-cos(n).^2;
 Sxx=0;
 Syy=0;
 Sxy=0;
+Syx=0;
 for i=1:nb
   X=fft(Han.*x((i-1)*Nb+1:i*Nb))/Nb;
   Y=fft(Han.*y((i-1)*Nb+1:i*Nb))/Nb;
   Sxx=Sxx+conj(X).*X;
   Syy=Syy+conj(Y).*Y;
   Sxy=Sxy+conj(X).*Y;
+  Syx=Syx+conj(Y).*X;
 end
 % Media
 Sxx=Sxx/nb;
 Syy=Syy/nb;
 Sxy=Sxy/nb;
+Syx=Syx/nb;
 % EU^2/Hz
 Sxx=Sxx/Df;
 Syy=Syy/Df;
 Sxy=Sxy/Df;
+Syx=Syx/Df;
 % Correcao Hanning
 Sxx=(8/3)*Sxx;
 Syy=(8/3)*Syy;
 Sxy=(8/3)*Sxy;
+Syx=(8/3)*Syx;
 end
 

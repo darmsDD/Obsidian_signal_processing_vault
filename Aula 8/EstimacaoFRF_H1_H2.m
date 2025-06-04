@@ -23,7 +23,7 @@ j=sqrt(-1);
 fo=zeros(1,npt/2);
 H=zeros(1,npt/2);
 
-for i=1:npt/2,
+for i=1:npt/2
   fo(i)=(fmin+(i-1)*deltaf);
   w=fo(i)*2*pi;
   D=K-M*w^2+C*w*j;
@@ -75,7 +75,7 @@ H1=zeros(1,nptb/2);
 H2=zeros(1,nptb/2);
 han=hanning(nptb)';
 
-for i=1:nblk,
+for i=1:nblk
   X=fft(han.*xn((i-1)*nptb+1:i*nptb));
   Y=fft(han.*yn((i-1)*nptb+1:i*nptb));
   X=X(1:nptb/2);
@@ -107,7 +107,7 @@ H2=Gyy./Gxy;
 f=zeros(1,nptb/2);
 deltaf=(fmax-fmin)/(nptb/2-1);
 j=sqrt(-1);
-for i=1:nptb/2,
+for i=1:nptb/2
   f(i)=(fmin+(i-1)*deltaf);
 end
 

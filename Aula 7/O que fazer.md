@@ -8,3 +8,15 @@ $\textcolor{red}{mas \ o \ que \ são \ propriedades \ médias}$
 
 Slide 7
 <span style="color:red;">As propriedades médias obtidas a partir de uma única realização são suficientes para caracterizar o processo.</span>
+
+
+
+
+
+
+
+why carla?
+
+Soft break or hard break after communication fail.
+
+
