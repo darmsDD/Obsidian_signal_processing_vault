@@ -18,25 +18,13 @@ for i=1:N_y_noise_cases
     noisey_array(i) = (i-1)*5;
 end
 
-
+x_without_noise = x;
 for i=1:N_y_noise_cases
     for j=1:N_x_noise_cases
         noisex = noisex_array(j);
         noisey = noisey_array(i);
 
-        %====================================
-        % Adding noise to entrance
-        %percX=70/100;
-        %wn=percX*rms(x)*randn(1,N);
-        %figure;
-        %plot(x);
-        %noisex=input('ruido na entrada (SNR=20 dB - alto):  ');
-        xo=x;
-        x=x+(noisex/100)*std(x)*randn(size(x));
-        %hold on;
-        %plot(x);
-        
-        %==================================
+        x=x_without_noise;
         
         X=fft(x);
         T=N*dt;
@@ -73,6 +61,15 @@ for i=1:N_y_noise_cases
         %============================================
         %============================================
         
+         %====================================
+        % Adding noise to entrance
+        percX=70/100;
+        wn=percX*rms(x)*randn(1,N);
+        x = x+wn;  
+        %==================================
+
+
+
         Nb=1024;
         nb=128;
         Tb=Nb*dt;
@@ -84,19 +81,26 @@ for i=1:N_y_noise_cases
         H2=Syy./Syx;
         Coh2=abs(Sxy).^2./(Sxx.*Syy);
         figure;
-        sgtitle(sprintf('X Noise = %d,Y Noise=%d/100', noisex,noisey));
+        sgtitle(sprintf('X Noise = %d,Y Noise=%d/100', noisex,noisey),'FontWeight', 'bold');
         subplot(2,1,1);
         hold on
         plot(f,20*log10(abs(H)),'b','LineWidth', 1.5);
         plot(fb,20*log10(abs(H1(1:Nb/2))),'LineWidth', 1);
         plot(fb, 20*log10(abs(H2(1:Nb/2))),'LineWidth', 1)
+        ylabel("Amplitude",'FontWeight', 'bold');
+        xlabel("f(hz)",'FontWeight', 'bold');
+        
         %plot(fb,20*log10(abs(H(1:npt/2))),'b',f,20*log10(abs(H1)),'-',f,20*log10(abs(H2)),'-')
         
         
-        legend('H','H1','H2')
+        legend('H','H1','H2','Location', 'southwest');
         subplot(2,1,2);
         plot(fb,Coh2(1:Nb/2))
-        title("Coeficiente de coerência");
+        title("Coeficiente de coerência",'FontWeight', 'bold');
+        ylabel("\gamma^2_{xy}(f)",'FontWeight', 'bold');
+        xlabel("f(hz)",'FontWeight', 'bold');
         ylim([0 1.2])
+
+        
     end
 end
