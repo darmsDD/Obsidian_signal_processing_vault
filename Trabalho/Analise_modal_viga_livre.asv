@@ -50,9 +50,9 @@ lambda(1:size_lambda_sigma_initial_vector) = lambda_first_5_positions;
 sigma(1:size_lambda_sigma_initial_vector) = sigma_first_5_positions;
 
 if(nmod > size_lambda_sigma_initial_vector)
-    for k=size_lambda_sigma_initial_vector + 1:nmod
-        lambda(k) = pi*(2*k+1)/2;
-        sigma(k) = 1;
+    for i=size_lambda_sigma_initial_vector + 1:nmod
+        lambda = [lambda pi*(2*i+1)/2];
+        sigma = [sigma 1];
     end
 end
 
@@ -131,17 +131,19 @@ frf_viga = zeros(1,size_frf);
 frequency_hertz_vector = min_frequency:max_frequency;
 w= 2*pi*frequency_hertz_vector;  % vetor de frequencias em radianos
 
-for p=1:size_frf
+for p=1:1
     for j=1:nmod
         numerador = phi(pos_vetor_saida,j)*phi(pos_vetor_excitacao,j);
-        denominador = m_modal(j)*(wn(j)^2 - w(p)^2 + i*2*w(p)*wn(j)*xi);
+        denominador = m_modal(j)*(wn(j)^2 - w(p)^2 + i*2*w(p)*wn(j)*xi)
+        if(denominador = 0)
         frf_viga(p) = frf_viga(p) + numerador/denominador;
+        
     end
 end
 
 figure;
 max = floor(length(w)/2);
-plot(w,abs(frf_viga));
+plot(w(1:max),abs(frf_viga((1:max))));
 xlabel("w (radianos)");
 ylabel("frf viga");
 title("FRF");
