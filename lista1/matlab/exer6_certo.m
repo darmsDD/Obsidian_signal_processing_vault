@@ -11,4 +11,6 @@ X_0 = A*T/4;
 hold on;
 stem(f_vector,abs(X(f_vector)));
 stem(0,X_0);
+ylabel("|X(f)|");
+xlabel("f");
 hold off;

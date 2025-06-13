@@ -6,7 +6,7 @@ clear all; close all; clc
 numero_na_fila_medicao = 5;
 
 min_frequency = 0; % Hz
-max_frequency = 100; % Hz
+max_frequency = 1000; % Hz
 
 
 %    Dados Viga experimental de Proc. Sinais
@@ -20,7 +20,7 @@ b=13e-3;  % base da seção transversal [m]
 h=13e-3;  % altura da seção transversal [m]
 L=770e-3;   % comprimento da viga [m]
 
-nmod = 7; % numero de modos
+nmod = 10; % numero de modos
 
 xi = 0.001; % + (0.01 - 0.001) * rand(1, nmod); % coeficiente de amortecimento
 %% Definição dos parâmetros constantes
