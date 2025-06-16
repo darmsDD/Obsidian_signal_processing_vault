@@ -1,7 +1,7 @@
 clc; close all; clear;
 
 
-fa = 10000; % 10kHz pelo enunciado
+fa = 20000; % 10kHz pelo enunciado
 N = 1024; % Escolhi de maneira arbitrária
 dt = 1/fa; % Define delta t
 df = fa/N; % Define delta f

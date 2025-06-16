@@ -79,7 +79,7 @@ pos_vetor_saida = ceil(distancia_saida/dx);
 wn = zeros(1,nmod);
 f = zeros(1,nmod);
 for i=1:nmod
-    f(i)=((lambda(i)^2/(2*pi))*sqrt(E*I/m));   % frequencia natural
+    f(i)=((lambda(i)^2/(2*pi*L^2))*sqrt(E*I/m));   % frequencia natural
     wn(i) = lambda(i)^2 * sqrt(E*I/m); % Frequência natural angular
     %lambda(i)
     for j=1:length(d)
@@ -122,46 +122,33 @@ m_modal = zeros(1,nmod);
 size_x = length(x);
 for i=1:nmod
     for j=1:size_x
-        % m_modal(i) = m_modal(i) + phi(j,i)^2*d(j);
-        m_modal(i) = m_modal(i) + phi(j,i)^2*dx;
+        m_modal(i) = m_modal(i) + phi(j,i)^2*d(j);
     end
-     m_modal(i) = m_modal(i)*m; %/L
+     m_modal(i) = m_modal(i)*m;
 end
 
 
 
 
 %% Cálculo da FRF
-
-frequency_hertz_vector = 0:2.5:4497.5;
-% size_frf = 4096;
-size_frf = length(frequency_hertz_vector);
+size_frf = max_frequency - min_frequency + 1;
 frf_viga = zeros(1,size_frf);
 
 
+frequency_hertz_vector = min_frequency:max_frequency;
 w= 2*pi*frequency_hertz_vector;  % vetor de frequencias em radianos
+
 for p=1:size_frf
     for j=1:nmod
         numerador = phi(pos_vetor_saida,j)*phi(pos_vetor_excitacao,j);
-        denominador = m_modal(j)*(f(j)^2 - frequency_hertz_vector(p)^2 + 1j*2*frequency_hertz_vector(p)*f(j)*xi);
-        % denominador = m_modal(j)/L*(wn(j)^2 - (w(p))^2 + 1j*2*w(p)*wn(j)*xi);
+        denominador = m_modal(j)*(wn(j)^2 - w(p)^2 + i*2*w(p)*wn(j)*xi);
         frf_viga(p) = frf_viga(p) + numerador/denominador;
     end
 end
 
-%plot(1/length(x_data)*abs(frf_viga.*fft(x_data)));
-
-% for p=1:size_frf
-%      for j=1:nmod
-%          numerador = phi(pos_vetor_saida,j)*phi(pos_vetor_excitacao,j);
-%          denominador = m_modal(j)*(f(j)^2 - frequency_hertz_vector(p)^2 + i*2*frequency_hertz_vector(p)*f(j)*xi);
-%          frf_viga(p) = frf_viga(p) + numerador/denominador;
-%      end
-% end
-
-
 figure;
-plot(frequency_hertz_vector,abs(frf_viga));
+max = floor(length(w)/2);
+plot(w,abs(frf_viga));
 xlabel("w (radianos)");
 ylabel("frf viga");
 title("FRF");

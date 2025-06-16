@@ -20,7 +20,7 @@ b=13e-3;  % base da seção transversal [m]
 h=13e-3;  % altura da seção transversal [m]
 L=770e-3;   % comprimento da viga [m]
 
-nmod = 10; % numero de modos
+nmod = 5; % numero de modos
 
 xi = 0.001; % + (0.01 - 0.001) * rand(1, nmod); % coeficiente de amortecimento
 %% Definição dos parâmetros constantes
@@ -143,7 +143,7 @@ w= 2*pi*frequency_hertz_vector;  % vetor de frequencias em radianos
 for p=1:size_frf
     for j=1:nmod
         numerador = phi(pos_vetor_saida,j)*phi(pos_vetor_excitacao,j);
-        denominador = m_modal(j)*(f(j)^2 - frequency_hertz_vector(p)^2 + 1j*2*frequency_hertz_vector(p)*f(j)*xi);
+        denominador = m_modal(j)*((f(j))^2 - (w(p)/2/pi)^2 + 1j*2*w(p)*wn(j)/(2*pi)*xi);
         % denominador = m_modal(j)/L*(wn(j)^2 - (w(p))^2 + 1j*2*w(p)*wn(j)*xi);
         frf_viga(p) = frf_viga(p) + numerador/denominador;
     end
