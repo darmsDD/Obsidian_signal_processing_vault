@@ -10,13 +10,13 @@ eta = 0.01;
 E0=210e9; % modulo de elasticidade [Pa]
 E=E0*(1+1i*eta); % modulo de elasticidade complexo
 rho=7800; % densidade [kg/m3]
-
+ E=E0;
 
 b=13e-3;  % base da seção transversal [m]
 h=13e-3;  % altura da seção transversal [m]
 L=770e-3;   % comprimento da viga [m]
 
-nmod = 5; % numero de modos
+nmod = 12; % numero de modos
 
 xi = 0.001; % + (0.01 - 0.001) * rand(1, nmod); % coeficiente de amortecimento
 %% Definição dos parâmetros constantes
@@ -39,15 +39,15 @@ sigma_first_5_positions = [...
 
 size_beta_sigma_initial_vector = length(beta_first_5_positions);
 
-beta = zeros(1,nmod);
+lambda = zeros(1,nmod);
 sigma = zeros(1,nmod);
 
-beta(1:size_beta_sigma_initial_vector) = beta_first_5_positions;
+lambda(1:size_beta_sigma_initial_vector) = beta_first_5_positions;
 sigma(1:size_beta_sigma_initial_vector) = sigma_first_5_positions;
 
 if(nmod > size_beta_sigma_initial_vector)
     for k=size_beta_sigma_initial_vector + 1:nmod
-        beta(k) = pi*(2*k+1)/2;
+        lambda(k) = pi*(2*k+1)/2;
         sigma(k) = 1;
     end
 end
@@ -60,7 +60,10 @@ end
 %% Cálculo das variáveis
 
 m=rho*b*h;   %  massa por unidade de comprimento [kg/m]
-I=b*h^3/12;    % momentode inércia
+%m=rho*(b*h - (0.97*b)*(0.97*h));   %  massa por unidade de comprimento [kg/m]
+
+I=b*h^3/12;    % momento de inércia
+%I = (b*h^3 - (0.97*b*(0.97*h)^3))/12 ;
 dx=0.001; % discretização do espaço                                                       
 x= 0:dx:L; % vetor do espaço discretizado
 d=x/L ; % vetor de espaço admensional
@@ -75,11 +78,11 @@ pos_vetor_saida = ceil(distancia_saida/dx);
 wn = zeros(1,nmod);
 fn = zeros(1,nmod);
 for i=1:nmod
-    fn(i)= beta(i)^2*sqrt(E*I/m)/(2*pi*L^2);   % frequencia natural
-    wn(i) = beta(i)^2 * sqrt(E*I/m)/(L^2); % Frequência natural angular
+    fn(i)= (lambda(i)^2/(2*pi*L^2))*sqrt(E*I/m);   % frequencia natural
+    wn(i) = (lambda(i)^2/(L^2))*sqrt(E*I/m);  % Frequência natural angular
     for j=1:length(d)
-         phi(j,i)=cosh(beta(i)*d(j)/L) + cos(beta(i)*d(j)/L)...
-        -sigma(i)*(sinh(beta(i)*d(j)/L)+sin(beta(i)*d(j)/L)); % forma do modo
+        phi(j,i)=cosh(lambda(i)*d(j)) + cos(lambda(i)*d(j))...
+        -sigma(i)*(sinh(lambda(i)*d(j))+sin(lambda(i)*d(j))); % forma do modo  
     end
     phin(:,i)=phi(:,i)/max(abs(phi(:,i)));  % normalização unitária
 end
@@ -121,20 +124,24 @@ df = 2.5;
 f = 0:df:4997.5;
 size_frf = length(f);
 frf_viga = zeros(1,size_frf);
+frf_viga2 = zeros(1,size_frf);
 w= 2*pi*f;  % vetor de frequencias em radianos
 
 for p=1:size_frf
     for j=1:nmod
         numerador = phi(pos_vetor_saida,j)*phi(pos_vetor_excitacao,j);
-        denominador = m_modal(j)*((fn(j)/(2*pi))^2 - (f(p)/(2*pi))^2 + i*2*f(p)*fn(j)*xi/(4*pi^2));
+        denominador = m_modal(j)*((fn(j))^2 - (f(p))^2 + 1i*2*f(p)*fn(j)*xi);
+        %denominador2 = m_modal(j)*(wn(j)^2 - w(p)^2 + 1i*2*w(p)*wn(j)*xi)/(4*(pi^2)); % frf em hertz
+        %frf_viga2(p) = frf_viga2(p) + numerador/denominador2;
         frf_viga(p) = frf_viga(p) + numerador/denominador;
     end
 end
 
+
 figure;
-plot(f,abs(frf_viga));
+plot(f(1:1600),db(9.81/4.44822*abs(frf_viga(1:1600))));
 xlabel("f (hertz)");
-ylabel("|H(f)|");
+ylabel("H(f) em db(g/lbf)");
 title("FRF");
 
 
