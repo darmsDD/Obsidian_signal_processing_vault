@@ -123,6 +123,6 @@ end
 
 %% Plot das FRFs, coeficiente de coerência e entrada
 plot_graficos_frf(frf_viga,f);
-[f_vector,estimator_data] = readuff("../PS_med/Joao/H1_2,1(f) Jun 12, 2025 09-29-09.uff");
-[f_vector2,coeff_data] = readuff("../PS_med/Joao/Coh2,1(f) Jun 12, 2025 09-29-09.uff");
-[t_vector,x_data] = readuff("../PS_med/Joao/input1(t) Jun 12, 2025 09-29-09.uff");
+
+
+%% Encontrando h(t)
