@@ -3,7 +3,7 @@ clear all; close all; clc
 
 %% Definição dos parâmetros variáveis
 
-numero_na_fila_medicao = 5;
+numero_na_fila_medicao = 3;
 
 %    Dados Viga experimental de Proc. Sinais
 eta = 0.01;
@@ -87,22 +87,8 @@ for i=1:nmod
     phin(:,i)=phi(:,i)/max(abs(phi(:,i)));  % normalização unitária
 end
 
-phi0=zeros(size(phi(:,1)));  % vetor do modo zero
-figure
-plot(d,phi0,'k',d,phin,'LineWidth',3.0)
-title('Frequencias e Modos da Viga free-free - Solução Analitica', 'FontSize', 24)
-xlabel('Comprimento adimensional (x/L)', 'FontSize', 24)
-ylabel('Amplitude', 'FontSize', 24)
-labels = cell(1, nmod+1);  % +1 porque a primeira frequência é 0 Hz
-
-labels{1} = 'f_0 = 0 Hz';
-for k = 1:nmod
-    labels{k+1} = ['f_' num2str(k) ' = ' num2str(fn(k)) ' Hz'];
-end
-
-lgd = legend(labels,'Location','southwest');
-%lgd.FontSize=16;
-grid
+%% Plot das formas modais
+plot_graficos_modais(phi,phin,fn,nmod,d);
 
 %% Cálculo da massa modal
 
@@ -115,13 +101,10 @@ for i=1:nmod
      m_modal(i) = m_modal(i)*m;
 end
 
-
-
-
 %% Cálculo da FRF
-
+lines = 1600;
 df = 2.5;
-f = 0:df:4997.5;
+f = (0:lines-1)*df;
 size_frf = length(f);
 frf_viga = zeros(1,size_frf);
 frf_viga2 = zeros(1,size_frf);
@@ -138,12 +121,8 @@ for p=1:size_frf
 end
 
 
-figure;
-plot(f(1:1600),db(9.81/4.44822*abs(frf_viga(1:1600))));
-xlabel("f (hertz)");
-ylabel("H(f) em db(g/lbf)");
-title("FRF");
-
-
-
-
+%% Plot das FRFs, coeficiente de coerência e entrada
+plot_graficos_frf(frf_viga,f);
+[f_vector,estimator_data] = readuff("../PS_med/Joao/H1_2,1(f) Jun 12, 2025 09-29-09.uff");
+[f_vector2,coeff_data] = readuff("../PS_med/Joao/Coh2,1(f) Jun 12, 2025 09-29-09.uff");
+[t_vector,x_data] = readuff("../PS_med/Joao/input1(t) Jun 12, 2025 09-29-09.uff");

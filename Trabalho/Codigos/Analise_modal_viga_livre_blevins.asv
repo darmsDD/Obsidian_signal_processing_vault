@@ -3,7 +3,7 @@ clear all; close all; clc
 
 %% Definição dos parâmetros variáveis
 
-numero_na_fila_medicao = 5;
+numero_na_fila_medicao = 3;
 
 %    Dados Viga experimental de Proc. Sinais
 eta = 0.01;
@@ -16,7 +16,7 @@ b=13e-3;  % base da seção transversal [m]
 h=13e-3;  % altura da seção transversal [m]
 L=770e-3;   % comprimento da viga [m]
 
-nmod = 10; % numero de modos
+nmod = 12; % numero de modos
 
 xi = 0.001; % + (0.01 - 0.001) * rand(1, nmod); % coeficiente de amortecimento
 %% Definição dos parâmetros constantes
@@ -87,6 +87,7 @@ for i=1:nmod
     phin(:,i)=phi(:,i)/max(abs(phi(:,i)));  % normalização unitária
 end
 
+%% Plot das formas modais
 phi0=zeros(size(phi(:,1)));  % vetor do modo zero
 figure
 plot(d,phi0,'k',d,phin,'LineWidth',3.0)
@@ -123,27 +124,65 @@ end
 df = 2.5;
 f = 0:df:4997.5;
 size_frf = length(f);
-%frf_viga = zeros(1,size_frf);
+frf_viga = zeros(1,size_frf);
 frf_viga2 = zeros(1,size_frf);
 w= 2*pi*f;  % vetor de frequencias em radianos
 
 for p=1:size_frf
     for j=1:nmod
         numerador = phi(pos_vetor_saida,j)*phi(pos_vetor_excitacao,j);
-        % denominador = m_modal(j)*((fn(j)/(2*pi))^2 - (f(p)/(2*pi))^2 + 1i*2*f(p)*fn(j)*xi/(4*pi^2));
-        denominador = m_modal(j)*(wn(j)^2 - w(p)^2 + 1i*2*w(p)*wn(j)*xi)/(4*(pi^2));
-        %denominador = m_modal(j)*4*(pi^2)*(fn(j)^2 - f(p)^2 + 1i*2*f(p)*fn(j)*xi);
-        frf_viga2(p) = frf_viga2(p) + numerador/denominador;
+        denominador = m_modal(j)*((fn(j))^2 - (f(p))^2 + 1i*2*f(p)*fn(j)*xi);
+        %denominador2 = m_modal(j)*(wn(j)^2 - w(p)^2 + 1i*2*w(p)*wn(j)*xi)/(4*(pi^2)); % frf em hertz
+        %frf_viga2(p) = frf_viga2(p) + numerador/denominador2;
+        frf_viga(p) = frf_viga(p) + numerador/denominador;
     end
 end
 
 
+%% Plot das FRFs e coeficiente de coerência
+
+% Só a FRF analítica
 figure;
-plot(f(1:1600),db(9.81/4.44822*abs(frf_viga2(1:1600))));
+plot(f(1:1600),db(9.81/4.44822*abs(frf_viga(1:1600))));
 xlabel("f (hertz)");
 ylabel("H(f) em db(g/lbf)");
 title("FRF");
 
+% FRF experimental e coerência
 
 
+% FRF analítica vs experimental, e coerÊncia
+figure;
+subplot(2,1,1);
+plot(f(1:1600),db(9.81/4.44822*abs(frf_viga(1:1600))));
+hold on;
+% ../PS_med/Joao/H1_2,1(f) Jun 12, 2025 09-29-09.uff
+% ../PS_med/Joao/Coh2,1(f) Jun 12, 2025 09-29-09.uff
+% ../PS_med/Joao/input1(t) Jun 12, 2025 09-29-09.uff
 
+% ../Dados/H1_2,1(f) Jun 12, 2025 09-05-23.uff
+% ../Dados/Coh2,1(f) Jun 12, 2025 09-05-23.uff
+% ../Dados/input1(t) Jun 12, 2025 09-05-23.uff
+
+
+[f_vector,estimator_data] = readuff("../PS_med/Joao/H1_2,1(f) Jun 12, 2025 09-29-09.uff");
+[f_vector2,coeff_data] = readuff("../PS_med/Joao/Coh2,1(f) Jun 12, 2025 09-29-09.uff");
+[t_vector,x_data] = readuff("../PS_med/Joao/input1(t) Jun 12, 2025 09-29-09.uff");
+f_vector(end)
+N = length(estimator_data);
+plot(f_vector(1:1600),db(abs(estimator_data(1:1600)/1800)));
+xlabel("f (hertz)");
+ylabel("H(f) em db(g/lbf)");
+title("FRF experimental versus FRF analítica");
+hold off;
+subplot(2,1,2);
+plot(f_vector2(1:1600),abs(coeff_data(1:1600)));
+title("Coeficiente de coerência ordinária");
+ylabel("Coh2,1(f)");
+xlabel("Hertz");
+
+figure;
+plot(t_vector,x_data);
+title("Entrada");
+ylabel("x(t)");
+xlabel("t");
