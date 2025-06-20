@@ -14,6 +14,6 @@ for k = 1:nmod
     labels{k+1} = ['f_' num2str(k) ' = ' num2str(fn(k)) ' Hz'];
 end
 
-lgd = legend(labels,'Location','southwest');
+legend(labels,'Location','southwest');
 %lgd.FontSize=16;
 grid

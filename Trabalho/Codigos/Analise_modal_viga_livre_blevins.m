@@ -1,9 +1,8 @@
 %  Solução Analitica da Viga Livre-Livre
 clear all; close all; clc
 
-%% Definição dos parâmetros variáveis
 
-numero_na_fila_medicao = 5;
+%% Definição dos parâmetros variáveis
 
 %    Dados Viga experimental de Proc. Sinais
 eta = 0.01;
@@ -16,7 +15,7 @@ b=13e-3;  % base da seção transversal [m]
 h=13e-3;  % altura da seção transversal [m]
 L=770e-3;   % comprimento da viga [m]
 
-nmod = 12; % numero de modos
+nmod = 15; % numero de modos
 
 xi = 0.001; % + (0.01 - 0.001) * rand(1, nmod); % coeficiente de amortecimento
 %% Definição dos parâmetros constantes
@@ -52,27 +51,17 @@ if(nmod > size_beta_sigma_initial_vector)
     end
 end
 
-
-
-
-
-
 %% Cálculo das variáveis
 
 m=rho*b*h;   %  massa por unidade de comprimento [kg/m]
-%m=rho*(b*h - (0.97*b)*(0.97*h));   %  massa por unidade de comprimento [kg/m]
-
 I=b*h^3/12;    % momento de inércia
-%I = (b*h^3 - (0.97*b*(0.97*h)^3))/12 ;
 dx=0.001; % discretização do espaço                                                       
 x= 0:dx:L; % vetor do espaço discretizado
 d=x/L ; % vetor de espaço admensional
-phi=[];
+size_x = length(x);
+phi=zeros(size_x,nmod);
+phin=zeros(size_x,nmod);
 
-distancia_saida = 20e-3; %posição na viga do acelerômetro
-distancia_excitacao = numero_na_fila_medicao*(70e-3) + distancia_saida; %posição na viga da excitação
-pos_vetor_excitacao = ceil(distancia_excitacao/dx);
-pos_vetor_saida = ceil(distancia_saida/dx);
 %% Cálculo da forma dos modos
 
 wn = zeros(1,nmod);
@@ -93,7 +82,6 @@ plot_graficos_modais(phi,phin,fn,nmod,d);
 %% Cálculo da massa modal
 
 m_modal = zeros(1,nmod);
-size_x = length(x);
 for i=1:nmod
     for j=1:size_x
         m_modal(i) = m_modal(i) + phi(j,i)^2*dx;
@@ -101,26 +89,56 @@ for i=1:nmod
      m_modal(i) = m_modal(i)*m;
 end
 
-%% Cálculo da FRF
+%% Criacao do loop
+tamanho_fila = 9;
+nb = 4096;
 lines = 1600;
-df = 2.5;
-f = (0:lines-1)*df;
-size_frf = length(f);
-frf_viga = zeros(1,size_frf);
-frf_viga2 = zeros(1,size_frf);
-w= 2*pi*f;  % vetor de frequencias em radianos
-
-for p=1:size_frf
-    for j=1:nmod
-        numerador = phi(pos_vetor_saida,j)*phi(pos_vetor_excitacao,j);
-        denominador = m_modal(j)*((wn(j))^2 - (w(p))^2 + 1i*2*w(p)*wn(j)*xi);
-        frf_viga(p) = frf_viga(p) + numerador/denominador;
+vector_H_analitico = zeros(lines,tamanho_fila);
+vector_H_experimental = zeros(lines,tamanho_fila);
+vector_Coeff_experimental = zeros(lines,tamanho_fila);
+vector_input_experimental = zeros(nb,tamanho_fila);
+vector_nome_das_pessoas = ["Natália", "Jefferson", "João", "Pedro", ...
+                  "Ivan", "Leonardo", "Lucas", "Davi", "Lamartini"];
+for numero_na_fila_medicao=1:tamanho_fila
+    
+   
+    nome_do_aluno = vector_nome_das_pessoas(numero_na_fila_medicao);
+    
+    %% Leitura dos arquivos
+    [f,frf_experimental,coeff_experimental,t,input_experimental] = read_data_from_files(numero_na_fila_medicao,lines);
+    
+    %% Cálculo da FRF
+    distancia_saida = 20e-3; %posição na viga do acelerômetro
+    distancia_excitacao = numero_na_fila_medicao*(70e-3) + distancia_saida; %posição na viga da excitação
+    pos_vetor_excitacao = ceil(distancia_excitacao/dx);
+    pos_vetor_saida = ceil(distancia_saida/dx);
+    
+    %f = (0:lines-1)*df;
+    size_frf = length(f);
+    frf_viga = zeros(1,size_frf);
+    frf_viga2 = zeros(1,size_frf);
+    w= 2*pi*f;  % vetor de frequencias em radianos
+    
+    for p=1:size_frf
+        for j=1:nmod
+            numerador = phi(pos_vetor_saida,j)*phi(pos_vetor_excitacao,j);
+            denominador = m_modal(j)*((wn(j))^2 - (w(p))^2 + 1i*2*w(p)*wn(j)*xi);
+            frf_viga(p) = frf_viga(p) + numerador/denominador;
+        end
     end
+    
+    m_div_s2N_para_g_div_lbf = 9.81./(4.44822); % m/(s^2*N) -> g/lbf
+    % Converte a frf analitica para g/lbf e deriva 2 vezes
+    frf_analitica = frf_viga(1:1600).*m_div_s2N_para_g_div_lbf.*(-1j*2*pi*f(1:lines)').^2;
+    
+    %% Adiciona a frf analitica, experimental, coerencia e input nos vetores
+    vector_H_analitico(:,numero_na_fila_medicao) = frf_analitica;
+    vector_H_experimental(:,numero_na_fila_medicao) = frf_experimental;
+    vector_Coeff_experimental(:,numero_na_fila_medicao) = coeff_experimental;
+    vector_input_experimental(:,numero_na_fila_medicao) = input_experimental;
+    
+    
+    %% Plot das FRFs, coeficiente de coerência e entrada
+    plot_graficos_frf(frf_analitica,frf_experimental,coeff_experimental,input_experimental,f,t,nome_do_aluno);
 end
-
-
-%% Plot das FRFs, coeficiente de coerência e entrada
-plot_graficos_frf(frf_viga,f);
-
-
 %% Encontrando h(t)
