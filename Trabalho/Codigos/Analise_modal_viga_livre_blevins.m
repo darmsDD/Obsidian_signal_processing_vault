@@ -3,14 +3,14 @@ clear all; close all; clc
 
 %% Definição dos parâmetros variáveis
 
-numero_na_fila_medicao = 3;
+numero_na_fila_medicao = 5;
 
 %    Dados Viga experimental de Proc. Sinais
 eta = 0.01;
 E0=210e9; % modulo de elasticidade [Pa]
 E=E0*(1+1i*eta); % modulo de elasticidade complexo
 rho=7800; % densidade [kg/m3]
- E=E0;
+%E=E0;
 
 b=13e-3;  % base da seção transversal [m]
 h=13e-3;  % altura da seção transversal [m]
@@ -113,9 +113,7 @@ w= 2*pi*f;  % vetor de frequencias em radianos
 for p=1:size_frf
     for j=1:nmod
         numerador = phi(pos_vetor_saida,j)*phi(pos_vetor_excitacao,j);
-        denominador = m_modal(j)*((fn(j))^2 - (f(p))^2 + 1i*2*f(p)*fn(j)*xi);
-        %denominador2 = m_modal(j)*(wn(j)^2 - w(p)^2 + 1i*2*w(p)*wn(j)*xi)/(4*(pi^2)); % frf em hertz
-        %frf_viga2(p) = frf_viga2(p) + numerador/denominador2;
+        denominador = m_modal(j)*((wn(j))^2 - (w(p))^2 + 1i*2*w(p)*wn(j)*xi);
         frf_viga(p) = frf_viga(p) + numerador/denominador;
     end
 end

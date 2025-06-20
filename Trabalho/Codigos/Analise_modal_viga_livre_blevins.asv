@@ -88,22 +88,7 @@ for i=1:nmod
 end
 
 %% Plot das formas modais
-phi0=zeros(size(phi(:,1)));  % vetor do modo zero
-figure
-plot(d,phi0,'k',d,phin,'LineWidth',3.0)
-title('Frequencias e Modos da Viga free-free - Solução Analitica', 'FontSize', 24)
-xlabel('Comprimento adimensional (x/L)', 'FontSize', 24)
-ylabel('Amplitude', 'FontSize', 24)
-labels = cell(1, nmod+1);  % +1 porque a primeira frequência é 0 Hz
-
-labels{1} = 'f_0 = 0 Hz';
-for k = 1:nmod
-    labels{k+1} = ['f_' num2str(k) ' = ' num2str(fn(k)) ' Hz'];
-end
-
-lgd = legend(labels,'Location','southwest');
-%lgd.FontSize=16;
-grid
+plot_graficos_modais(phi,phin,fn,nmod,d);
 
 %% Cálculo da massa modal
 
@@ -116,13 +101,10 @@ for i=1:nmod
      m_modal(i) = m_modal(i)*m;
 end
 
-
-
-
 %% Cálculo da FRF
-
+lines = 21600;
 df = 2.5;
-f = 0:df:4997.5;
+f = (0:lines-1)*df;
 size_frf = length(f);
 frf_viga = zeros(1,size_frf);
 frf_viga2 = zeros(1,size_frf);
@@ -139,50 +121,8 @@ for p=1:size_frf
 end
 
 
-%% Plot das FRFs e coeficiente de coerência
-
-% Só a FRF analítica
-figure;
-plot(f(1:1600),db(9.81/4.44822*abs(frf_viga(1:1600))));
-xlabel("f (hertz)");
-ylabel("H(f) em db(g/lbf)");
-title("FRF");
-
-% FRF experimental e coerência
+%% Plot das FRFs, coeficiente de coerência e entrada
+plot_graficos_frf(frf_viga,f);
 
 
-% FRF analítica vs experimental, e coerÊncia
-figure;
-subplot(2,1,1);
-plot(f(1:1600),db(9.81/4.44822*abs(frf_viga(1:1600))));
-hold on;
-% ../PS_med/Joao/H1_2,1(f) Jun 12, 2025 09-29-09.uff
-% ../PS_med/Joao/Coh2,1(f) Jun 12, 2025 09-29-09.uff
-% ../PS_med/Joao/input1(t) Jun 12, 2025 09-29-09.uff
-
-% ../Dados/H1_2,1(f) Jun 12, 2025 09-05-23.uff
-% ../Dados/Coh2,1(f) Jun 12, 2025 09-05-23.uff
-% ../Dados/input1(t) Jun 12, 2025 09-05-23.uff
-
-
-[f_vector,estimator_data] = readuff("../PS_med/Joao/H1_2,1(f) Jun 12, 2025 09-29-09.uff");
-[f_vector2,coeff_data] = readuff("../PS_med/Joao/Coh2,1(f) Jun 12, 2025 09-29-09.uff");
-[t_vector,x_data] = readuff("../PS_med/Joao/input1(t) Jun 12, 2025 09-29-09.uff");
-f_vector(end)
-N = length(estimator_data);
-plot(f_vector(1:1600),db(abs(estimator_data(1:1600)/1800)));
-xlabel("f (hertz)");
-ylabel("H(f) em db(g/lbf)");
-title("FRF experimental versus FRF analítica");
-hold off;
-subplot(2,1,2);
-plot(f_vector2(1:1600),abs(coeff_data(1:1600)));
-title("Coeficiente de coerência ordinária");
-ylabel("Coh2,1(f)");
-xlabel("Hertz");
-
-figure;
-plot(t_vector,x_data);
-title("Entrada");
-ylabel("x(t)");
-xlabel("t");
+%% Encontrando h(t)
