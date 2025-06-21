@@ -105,7 +105,6 @@ for numero_na_fila_medicao=1:tamanho_fila
     
     %% Leitura dos arquivos
     [f,frf_experimental,coeff_experimental,t,input_experimental] = read_data_from_files(numero_na_fila_medicao,lines);
-    
     %% Cálculo da FRF Analítica
     distancia_saida = 20e-3; %posição na viga do acelerômetro
     distancia_excitacao = numero_na_fila_medicao*(70e-3) + distancia_saida; %posição na viga da excitação
@@ -143,9 +142,9 @@ for numero_na_fila_medicao=1:tamanho_fila
     
     %% Plot das FRFs, coeficiente de coerência e entrada
     %plot_graficos_frf(frf_analitica,frf_experimental,coeff_experimental,input_experimental,f,t,nome_do_aluno);
-    plot_graficos_frf(vector_H_analitico(:,numero_na_fila_medicao),vector_H_experimental(:,numero_na_fila_medicao), ...
-        vector_Coeff_experimental(:,numero_na_fila_medicao),vector_input_experimental(:,numero_na_fila_medicao), ...
-        f,t,nome_do_aluno);
+    %plot_graficos_frf(vector_H_analitico(:,numero_na_fila_medicao),vector_H_experimental(:,numero_na_fila_medicao), ...
+    %    vector_Coeff_experimental(:,numero_na_fila_medicao),vector_input_experimental(:,numero_na_fila_medicao), ...
+    %    f,t,nome_do_aluno);
 
 end
 
@@ -169,37 +168,15 @@ end
 
 vector_H_analitico_add_f_negativo = [vector_H_analitico ; flipud(conj(vector_H_analitico(2:end,:)))];
 vector_H_experimental_add_f_negativo= [vector_H_experimental ; flipud(conj(vector_H_experimental(2:end,:)))];
-% size(vector_H_analitico_add_f_negativo)
-% size(vector_H_experimental_add_f_negativo)
 
 %% Verifica se as operações estão corretas igualando o abs das frequencias negativas e positivas (ignorando a posição 0)
-[qtd_linhas_analitico,qtd_colunas_analitico] = size(vector_H_analitico_add_f_negativo);
-vetor_frequencias_negativas_frf_analitica = vector_H_analitico_add_f_negativo(ceil(qtd_linhas_analitico/2)+1:end,:);
-vetor_frequencias_negativas_frf_analitica = flipud(vetor_frequencias_negativas_frf_analitica);
+isAddNegativeFrequenciesValid(vector_H_analitico_add_f_negativo,vector_H_experimental_add_f_negativo)
 
-vetor_frequencias_positivas_frf_analitica = vector_H_analitico_add_f_negativo(2:ceil(qtd_linhas_analitico/2),:);
-isequal(abs(vetor_frequencias_negativas_frf_analitica),abs(vetor_frequencias_positivas_frf_analitica))
+dt = t(2) - t(1);
+fa = 1/dt;
+vector_h_analitico = ifft(vector_H_analitico_add_f_negativo);
+vector_h_experimental = ifft(vector_H_experimental_add_f_negativo);
 
 [qtd_linhas_experimental,qtd_colunas_experimental] = size(vector_H_experimental_add_f_negativo);
-vetor_frequencias_negativas_frf_experimental = vector_H_experimental_add_f_negativo(ceil(qtd_linhas_experimental/2)+1:end,:);
-vetor_frequencias_negativas_frf_experimental = flipud(vetor_frequencias_negativas_frf_experimental);
-
-vetor_frequencias_positivas_frf_experimental = vector_H_experimental_add_f_negativo(2:ceil(qtd_linhas_experimental/2),:);
-isequal(abs(vetor_frequencias_negativas_frf_experimental),abs(vetor_frequencias_positivas_frf_experimental))
-
-
-vector_h_analitico = ifft(vector_H_analitico_add_f_negativo);
-vector_h_experimental = ifft(vector_H_analitico_add_f_negativo);
-size(vector_h_experimental)
-size(vector_h_analitico)
-
-
-% figure;
-% hold on;
-% tamanho = length(vector_h_analitico)/2;
-% length(t)
-% tamanho
-% plot(t,vector_h_analitico(1:tamanho,5));
-% plot(t,vector_h_experimental(1:tamanho,5));
-% legend("h(t) analitico","h(t) experimental");
-% hold off;
+t = (0:qtd_linhas_experimental-1)*dt;
+plot_ht(vector_h_analitico,vector_h_experimental,t,tamanho_fila,vector_nome_das_pessoas);
