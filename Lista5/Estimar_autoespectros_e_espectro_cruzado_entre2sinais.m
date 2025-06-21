@@ -32,7 +32,7 @@ Y=H.*X(1:N/2);
 % primeiro as frequÊncias positivas e depois negativas.
 % Também sabemos da propriedade X(-f) = X*(f) {conjugado}
 % Exemplo com apenas frequÊncias positivas:
-% Y(f) = [0 2+i 1-i] Y*(f)(2:N/2) = [2-i 1+i] flipr(Y*(f)) = [1+i 2-i]
+% Y(f) = [0 2+i 1-i] Y*(f)(2:N/2) = [2-i 1+i] fliplr(Y*(f)) = [1+i 2-i]
 % Y(f) = [Y(f) 0 Y*(f)] = [0 2+i 1-i 0 1+i 2-i]
 % A adição do 0 ainda não está clara para mim. Talvez nyquist.
 % Fazendo fftshift (só para ver o resultado final)
