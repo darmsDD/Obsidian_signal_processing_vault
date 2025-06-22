@@ -15,7 +15,7 @@ b=13e-3;  % base da seção transversal [m]
 h=13e-3;  % altura da seção transversal [m]
 L=770e-3;   % comprimento da viga [m]
 
-nmod = 12; % numero de modos
+nmod = 9; % numero de modos
 
 xi = 0.001; % + (0.01 - 0.001) * rand(1, nmod); % coeficiente de amortecimento
 %% Definição dos parâmetros constantes
@@ -77,7 +77,7 @@ for i=1:nmod
 end
 
 %% Plot das formas modais
-plot_graficos_modais(phi,phin,fn,nmod,d);
+%plot_graficos_modais(phi,phin,fn,nmod,d);
 
 %% Cálculo da massa modal
 
@@ -142,9 +142,9 @@ for numero_na_fila_medicao=1:tamanho_fila
     
     %% Plot das FRFs, coeficiente de coerência e entrada
     %plot_graficos_frf(frf_analitica,frf_experimental,coeff_experimental,input_experimental,f,t,nome_do_aluno);
-    %plot_graficos_frf(vector_H_analitico(:,numero_na_fila_medicao),vector_H_experimental(:,numero_na_fila_medicao), ...
-    %    vector_Coeff_experimental(:,numero_na_fila_medicao),vector_input_experimental(:,numero_na_fila_medicao), ...
-    %    f,t,nome_do_aluno);
+   % plot_graficos_frf(vector_H_analitico(:,numero_na_fila_medicao),vector_H_experimental(:,numero_na_fila_medicao), ...
+   %     vector_Coeff_experimental(:,numero_na_fila_medicao),vector_input_experimental(:,numero_na_fila_medicao), ...
+   %     f,t,nome_do_aluno);
 
 end
 
@@ -170,8 +170,10 @@ vector_H_analitico_add_f_negativo = [vector_H_analitico ; flipud(conj(vector_H_a
 vector_H_experimental_add_f_negativo= [vector_H_experimental ; flipud(conj(vector_H_experimental(2:end,:)))];
 
 %% Verifica se as operações estão corretas igualando o abs das frequencias negativas e positivas (ignorando a posição 0)
-isAddNegativeFrequenciesValid(vector_H_analitico_add_f_negativo,vector_H_experimental_add_f_negativo)
+isAddNegativeFrequenciesValid(vector_H_analitico_add_f_negativo,vector_H_experimental_add_f_negativo);
 
+
+%% Realiza a ifft e plot dos h(t)
 dt = t(2) - t(1);
 fa = 1/dt;
 vector_h_analitico = ifft(vector_H_analitico_add_f_negativo);
@@ -179,4 +181,71 @@ vector_h_experimental = ifft(vector_H_experimental_add_f_negativo);
 
 [qtd_linhas_experimental,qtd_colunas_experimental] = size(vector_H_experimental_add_f_negativo);
 t = (0:qtd_linhas_experimental-1)*dt;
-plot_ht(vector_h_analitico,vector_h_experimental,t,tamanho_fila,vector_nome_das_pessoas);
+%plot_ht(vector_h_analitico,vector_h_experimental,t,tamanho_fila,vector_nome_das_pessoas);
+
+
+%figure;
+%plot(t,h_janelado);
+%size(h_janelado)
+%% Prony
+n_prony = 3;
+[s,A] = newpronySIMO(vector_h_experimental,dt,n_prony);
+
+omega = abs(s) ;
+xi = [];
+for numero_fila_medicao=1:1
+    A(:,numero_na_fila_medicao)
+    omega(numero_fila_medicao)
+    xi_temp = real(A(:,numero_na_fila_medicao)) ./ omega(numero_fila_medicao);
+    xi = [xi, xi_temp];
+    %xi(:,numero_fila_medicao)=xi(:,numero_fila_medicao)/max(abs(xi(:,numero_fila_medicao)));  % normalização unitária
+end
+%xi = xi';
+%plot(xi);
+
+
+% A = [];
+% s = [];
+% for numero_fila_medicao=1:tamanho_fila
+%     [s_temp,A_temp] = newpronySIMO(vector_h_experimental(:,numero_fila_medicao),dt,nmod);
+%     A = [A, A_temp];
+%     s = [s, s_temp'];
+% end
+% s = mean(s, 2);
+% indices_validos = find(imag(s) > 0);
+% s = s(indices_validos);
+
+% size(s)
+% size(A_total)
+% 
+% indices_validos = find(imag(s) > 0);
+% s_validos = s(indices_validos);
+% A_validos = A(indices_validos,:); % pega só as linhas dos modos válidos
+% % %A_validos =A_total
+% nmod = length(s); % número real de modos
+% 
+% %% Agora construir a "forma modal experimental"
+% 
+% % Cada linha de A_validos agora é um modo
+% % Cada coluna corresponde a uma posição de excitação (q=1..9)
+% % % O módulo dos resíduos dá a "forma modal relativa" (amplitude da forma modal)
+% formas_modais_exp = abs(A_validos); % módulo (você pode manter o complexo se quiser analisar fase)
+% % formas_modais_reais = real(A_validos);
+% % formas_modais_norm = formas_modais_reais ./ max(abs(formas_modais_reais), [], 2);
+% % % Agora vamos normalizar cada forma modal (por modo)
+% formas_modais_norm = formas_modais_exp ./ max(formas_modais_exp,[],2);
+% 
+% % Agora podemos plotar
+% figure;
+% hold on;
+% 
+% for k = 1:nmod
+%     plot(1:9, formas_modais_norm(k,:));
+% end
+% 
+% xlabel('Posição de excitação (1 a 9)');
+% ylabel('Amplitude normalizada');
+% title('Formas modais experimentais');
+% grid on;
+% legendStrings = strcat('Modo ', string(1:nmod));
+% legend(legendStrings);

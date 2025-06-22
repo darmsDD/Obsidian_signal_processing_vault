@@ -32,7 +32,8 @@ abs_coeff_experimental = abs(coeff_experimental);
 
 
 % FRF analítica vs experimental, e coerencia
-figure('Name',nome_do_aluno);
+fig = figure('Name',nome_do_aluno);
+output_folder = '../Imagens/frf/';
 subplot(2,1,1);
 plot(f(1:1600),db(abs_frf_analitica));
 hold on;
@@ -48,7 +49,10 @@ plot(f(1:1600),abs_coeff_experimental);
 title("Coeficiente de coerência ordinária");
 ylabel("Coh2,1(f)");
 xlabel("Hertz");
-
+nome_arquivo = strcat(char(nome_do_aluno), '_frf_analitica_vs_experimental.eps');
+full_path = fullfile(output_folder, nome_arquivo);
+% salva em eps (modo vetor, alta qualidade)
+print(fig, full_path, '-depsc');
 
 % 
 % figure;
