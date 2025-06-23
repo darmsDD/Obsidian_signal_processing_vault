@@ -1,57 +1,40 @@
-function prony_e_graficos(vector_h_analitico,vector_h_experimental,tamanho_fila,t,nmod)
+function [array_A,array_s] =   prony_e_graficos(vector_h_analitico,vector_h_experimental,tamanho_fila,t,nmod)
 
+isAnalitical = input("Analytical (1)| Experiment (anything else):");
+nmod = input("Type number of mods (will be multiplied by 2):");
 dt = t(2) - t(1);
-%% Prony
- [sTotal,ATotal] = newpronySIMO(vector_h_analitico,dt,nmod);
-% plot(real(A(:,numero_fila_medicao))/max(real(A(:,numero_fila_medicao))))
-% A = A';
-
-figure;
-% indices = find(imag(sTotal)>0);
-% sTotal = sTotal(indices);
-sTotal = fliplr(sTotal);
-ATotal = ATotal ./ vecnorm(ATotal, 2, 2);
-% size(sTotal)
-% size(ATotal)
-plot(abs(sTotal),real(ATotal));
-title('Frequencias e Modos da Viga free-free - Solução Prony', 'FontSize', 24)
-xlabel('Comprimento adimensional (x/L)', 'FontSize', 24)
-ylabel('Amplitude', 'FontSize', 24)
-labels = cell(1, nmod);  % +1 porque a primeira frequência é 0 Hz
-
-for k = 1:length(indices)
-    labels{k} = ['f_' num2str(k) ' = ' num2str(abs(sTotal(k))) ' Hz'];
-
-end
-legend(labels,'Location','southwest');
-%lgd.FontSize=16;
-grid
-
-
-
- t_length = length(t);
-% [trash,r_length] = size(A);
-% figure;
+t_length = length(t);
+array_A = zeros(nmod*2,tamanho_fila);
+array_s = zeros(tamanho_fila,nmod*2);
 for numero_fila_medicao=1:tamanho_fila
-    [s,A] = newpronySIMO(vector_h_experimental(:,numero_fila_medicao),dt,nmod);
+    if(isAnalitical)
+        [s,A] = newpronySIMO(vector_h_analitico(:,numero_fila_medicao),dt,nmod);
+    else
+        [s,A] = newpronySIMO(vector_h_experimental(:,numero_fila_medicao),dt,nmod);
+    end
+    array_A(:,numero_fila_medicao) = A;
+    array_s(numero_fila_medicao,:) = s;
     h_prony = zeros(1,t_length);
-    r_length = length(A);
+    r_length = size(A,1);
     for i=1:t_length
         for r=1:r_length
-            %h_prony(i) = h_prony(i) + A(r,numero_na_fila_medicao)*exp(s(r)*dt*i);
             h_prony(i) = h_prony(i) + A(r)*exp(s(r)*dt*i);
         end
     end
-    % figure;
-    % plot(t,vector_h_experimental(:,numero_fila_medicao)');
-    % hold on;
-    % plot(t,real(h_prony));
-    % legend("experimetal","prony");
+     figure;
+     analytical_or_experimental_string = "experimental";
+     if(isAnalitical)
+        plot(t,vector_h_analitico(:,numero_fila_medicao)');
+        analytical_or_experimental_string = "analitico";
+     else
+        plot(t,vector_h_experimental(:,numero_fila_medicao)');
+     end
+
+     hold on;
+     plot(t,real(h_prony));
+     legend(analytical_or_experimental_string,"prony");
 end
 % hold on
-
-
-
 
 
 % omega = abs(s) ;

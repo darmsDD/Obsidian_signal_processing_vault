@@ -77,7 +77,7 @@ for i=1:nmod
 end
 
 %% Plot das formas modais
-plot_graficos_modais(phi,phin,fn,nmod,d);
+%plot_graficos_modais(phi,phin,fn,nmod,d);
 
 %% Cálculo da massa modal
 
@@ -181,15 +181,21 @@ vector_h_experimental = ifft(vector_H_experimental_add_f_negativo);
 
 [qtd_linhas_experimental,qtd_colunas_experimental] = size(vector_H_experimental_add_f_negativo);
 t = (0:qtd_linhas_experimental-1)*dt;
-%plot_ht(vector_h_analitico,vector_h_experimental,t,tamanho_fila,vector_nome_das_pessoas);
+%1plot_ht(vector_h_analitico,vector_h_experimental,t,tamanho_fila,vector_nome_das_pessoas);
 
 
 %figure;
 %plot(t,h_janelado);
 %size(h_janelado)
 %% Prony
-% prony_e_graficos(vector_h_analitico,vector_h_experimental,tamanho_fila,t,nmod)
- 
+[array_A,array_s] = prony_e_graficos(vector_h_analitico,vector_h_experimental,tamanho_fila,t,nmod);
+ array_A = array_A';
+ array_wn = abs(array_s);
+
+
+
+
+
 
 %% Passando o array todo
 %[s,A] = newpronySIMO(vector_h_analitico,dt,8);
@@ -212,27 +218,3 @@ t = (0:qtd_linhas_experimental-1)*dt;
 %     legend("experimental","prony experimental");
 %     %legend("experimetal","analitico","prony");
 % end
-
-
-
-%% passando um vetor por vez pro prony e plotando h(t)
-t_length = length(t);
-for numero_fila_medicao=1:tamanho_fila
-    [s,A] = newpronySIMO(vector_h_analitico(:,numero_fila_medicao),dt,7);
-    %[s,A] = newpronySIMO(vector_h_experimental(:,numero_fila_medicao),dt,7);
-
-    h_prony = zeros(1,t_length);
-    r_length = length(A);
-    for i=1:t_length
-        for r=1:r_length
-            h_prony(i) = h_prony(i) + A(r)*exp(s(r)*dt*i);
-        end
-    end
-    figure;
-    hold on;
-    %plot(t,vector_h_experimental(:,numero_fila_medicao)');
-    plot(t,vector_h_analitico(:,numero_fila_medicao)');
-    plot(t,real(h_prony));
-    legend("experimental","prony experimental");
-    %legend("experimetal","analitico","prony");
-end
