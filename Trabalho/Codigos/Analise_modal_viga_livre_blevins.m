@@ -77,7 +77,7 @@ for i=1:nmod
 end
 
 %% Plot das formas modais
-%plot_graficos_modais(phi,phin,fn,nmod,d);
+plot_graficos_modais(phi,phin,fn,nmod,d);
 
 %% Cálculo da massa modal
 
@@ -142,9 +142,9 @@ for numero_na_fila_medicao=1:tamanho_fila
     
     %% Plot das FRFs, coeficiente de coerência e entrada
     %plot_graficos_frf(frf_analitica,frf_experimental,coeff_experimental,input_experimental,f,t,nome_do_aluno);
-   % plot_graficos_frf(vector_H_analitico(:,numero_na_fila_medicao),vector_H_experimental(:,numero_na_fila_medicao), ...
-   %     vector_Coeff_experimental(:,numero_na_fila_medicao),vector_input_experimental(:,numero_na_fila_medicao), ...
-   %     f,t,nome_do_aluno);
+    %plot_graficos_frf(vector_H_analitico(:,numero_na_fila_medicao),vector_H_experimental(:,numero_na_fila_medicao), ...
+    %    vector_Coeff_experimental(:,numero_na_fila_medicao),vector_input_experimental(:,numero_na_fila_medicao), ...
+    %    f,t,nome_do_aluno);
 
 end
 
@@ -176,45 +176,107 @@ isAddOfNegativeFrequenciesValid = isAddNegativeFrequenciesValid(vector_H_analiti
 %% Realiza a ifft e plot dos h(t)
 dt = t(2) - t(1);
 fa = 1/dt;
-vector_h_analitico = ifft(vector_H_analitico_add_f_negativo);
-vector_h_experimental = ifft(vector_H_experimental_add_f_negativo);
+vector_h_analitico = ifft(vector_H_analitico_add_f_negativo,[],1);
+vector_h_experimental = ifft(vector_H_experimental_add_f_negativo,[],1);
 
 [qtd_linhas_experimental,qtd_colunas_experimental] = size(vector_H_experimental_add_f_negativo);
 t = (0:qtd_linhas_experimental-1)*dt;
-%1plot_ht(vector_h_analitico,vector_h_experimental,t,tamanho_fila,vector_nome_das_pessoas);
+plot_ht(vector_h_analitico,vector_h_experimental,t,tamanho_fila,vector_nome_das_pessoas);
 
 
-%figure;
-%plot(t,h_janelado);
-%size(h_janelado)
 %% Prony
-[array_A,array_s] = prony_e_graficos(vector_h_analitico,vector_h_experimental,tamanho_fila,t,nmod);
- array_A = array_A';
- array_wn = abs(array_s);
+tamanho_fila = 9;
+[array_A,array_s,nmod] = prony_e_graficos(vector_h_analitico,vector_h_experimental,tamanho_fila,t,nmod);
+     array_A = array_A';
+     array_wn = abs(array_s);
+    
+    
+    [l,c] = size(array_wn);
+    prony_modal = [];
+    prony_modaln = [];
+    for i=1:l
+         for j=1:c
+            [value, min_idx] = min(abs(array_wn(i,j)/(2*pi) - fn));
+            if(abs(value) < 1000)
+               prony_modal(min_idx,i) = abs(array_A(i,j)); 
+            end
+    
+         end
+    end
+    prony_modal_min = min(prony_modal(:));
+    prony_modal_max = max(prony_modal(:));
+    
+    prony_modal_norm = 2 * (prony_modal - prony_modal_min) / (prony_modal_max - prony_modal_min) - 1;
+    distances = (90e-3:70e-3:770e-3);
+    [~,tamanho_distancia] = size(prony_modal);
+    for i=1:length(fn)
+        figure;
+        hold on;
+        plot(distances(1:tamanho_distancia),prony_modal(i,:));
+        plot(distances(1:tamanho_distancia),phi(90e-3/dx:70e-3/dx:650e-3/dx,i));
+        legend("prony","analitico");
+        hold off;
+    end
 
 
 
 
 
 
-%% Passando o array todo
-%[s,A] = newpronySIMO(vector_h_analitico,dt,8);
-% [s,A] = newpronySIMO(vector_h_experimental,dt,8);
-% t_length = length(t);
-% r_length = size(A, 1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+% [array_A,array_s,nmod] = prony_e_graficos(vector_h_analitico,vector_h_experimental,tamanho_fila,t,nmod);
+% %array_A = array_A';
+% array_s = array_s';
+% array_wn = abs(array_s);
 % 
-% for numero_fila_medicao=1:tamanho_fila
-%     h_prony = zeros(1,t_length);
-%     for i=1:t_length
-%         for r=1:r_length
-%             h_prony(i) = h_prony(i) + A(r,numero_na_fila_medicao)*exp(s(r)*dt*i);
-%         end
-%     end
-%     figure;
-%     hold on;
-%     %plot(t,vector_h_experimental(:,numero_fila_medicao)');
-%     plot(t,vector_h_analitico(:,numero_fila_medicao)');
-%     plot(t,real(h_prony));
-%     legend("experimental","prony experimental");
-%     %legend("experimetal","analitico","prony");
+% array_beta = sqrt(sort(array_wn)/sqrt(E*I/m));
+% array_sigma = (cosh(array_beta*L) - cos(array_beta*L))./(sinh(array_beta*L) - sin(array_beta*L));
+% 
+% mode_prony = zeros(nmod,length(x));
+% 
+% for mode = 1:nmod
+%     mode_prony(mode,:) = (cosh(array_beta(mode)*x) - cos(array_beta(mode)*x)) - array_sigma(mode)*(sinh(array_beta(mode)*x) - sin(array_beta(mode)*x));
+% end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% sort_s = zeros(size(array_s));
+% sort_ind = zeros(size(array_s));
+% 
+% sort_A = zeros(size(array_s));
+% 
+% aux = size(array_s);
+% 
+% for i = 1:aux(1)
+%     [sort_s(i,:),sort_ind(i,:)] = sort(abs(array_s(i,:)));
+%     sort_A(i,:) = array_A(i,sort_ind(i,:));
 % end

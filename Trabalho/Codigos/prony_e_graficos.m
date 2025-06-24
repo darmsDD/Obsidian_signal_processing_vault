@@ -1,4 +1,4 @@
-function [array_A,array_s] =   prony_e_graficos(vector_h_analitico,vector_h_experimental,tamanho_fila,t,nmod)
+function [array_A,array_s,nmod] =   prony_e_graficos(vector_h_analitico,vector_h_experimental,tamanho_fila,t,nmod)
 
 isAnalitical = input("Analytical (1)| Experiment (anything else):");
 nmod = input("Type number of mods (will be multiplied by 2):");
@@ -16,23 +16,23 @@ for numero_fila_medicao=1:tamanho_fila
     array_s(numero_fila_medicao,:) = s;
     h_prony = zeros(1,t_length);
     r_length = size(A,1);
-    for i=1:t_length
+    for i=0:t_length-1
         for r=1:r_length
-            h_prony(i) = h_prony(i) + A(r)*exp(s(r)*dt*i);
+            h_prony(i+1) = h_prony(i+1) + A(r)*exp(s(r)*dt*i);
         end
     end
-     figure;
-     analytical_or_experimental_string = "experimental";
-     if(isAnalitical)
-        plot(t,vector_h_analitico(:,numero_fila_medicao)');
-        analytical_or_experimental_string = "analitico";
-     else
-        plot(t,vector_h_experimental(:,numero_fila_medicao)');
-     end
-
-     hold on;
-     plot(t,real(h_prony));
-     legend(analytical_or_experimental_string,"prony");
+     % figure;
+     % analytical_or_experimental_string = "experimental";
+     % if(isAnalitical)
+     %    plot(t,vector_h_analitico(:,numero_fila_medicao)');
+     %    analytical_or_experimental_string = "analitico";
+     % else
+     %    plot(t,vector_h_experimental(:,numero_fila_medicao)');
+     % end
+     % 
+     % hold on;
+     % plot(t,real(h_prony));
+     % legend(analytical_or_experimental_string,"prony");
 end
 % hold on
 

@@ -1,15 +1,25 @@
 clc; close all; clear all;
 
-N = 7;
-n=3;
-H = [];
-h=[ 1 2 3; 4 5 6; 7 8 9;10 11 12; 13 14 15; 16 17 18; 19 20 21];
+% Example matrix
+A = rand(9,4);  % your 9x4 array
+l = A.';
+B = reshape(A.', [], 1);
+% Define how many clusters you want
+k = 4;  
 
+% Apply k-means
+[idx, C] = kmeans(B, k);
 
-for k=1:N-2*n
-    N-2*n
-    H=[H;
-       h(:,(k-1)+1:(k-1)+2*n)];
+% idx gives you the cluster assignment for each row
+disp(idx)
+
+[m, n] = size(A);  % m = 9, n = 4
+
+for k=1:length(idx)
+    i = floor((k-1)/n) +1;
+    j = (mod((k-1),n)) + 1;
+    %fprintf('Vetor %d --> Linha %d, Coluna %d', k, i, j);
+   
+    %fprintf("B(%d) = %d |A(%d,%d) = %d\n",k,B(k),i,j,A(i,j));
 end
 
-H
