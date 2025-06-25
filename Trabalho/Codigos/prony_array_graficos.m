@@ -10,8 +10,7 @@ if(isAnalitical)
         [s,A] = newpronySIMO(vector_h_experimental,dt,nmod);
 end
 
-size(s)
-size(A)
+
 for numero_fila_medicao=1:tamanho_fila
     
     h_prony = zeros(1,t_length);

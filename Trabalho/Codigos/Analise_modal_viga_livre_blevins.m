@@ -90,7 +90,7 @@ for i=1:nmod
 end
 
 %% Criacao do loop
-tamanho_fila = 1;
+tamanho_fila = 9;
 nb = 4096;
 lines = 1600;
 vector_H_analitico = zeros(lines,tamanho_fila);
@@ -190,12 +190,9 @@ mse = plot_ht(vector_h_analitico,vector_h_experimental,t,tamanho_fila,vector_nom
 
 %% Prony
 
-prony_array_graficos(vector_h_analitico,vector_h_experimental,tamanho_fila,t);
+%prony_array_graficos(vector_h_analitico,vector_h_experimental,tamanho_fila,t);
+[array_A,array_s,order] = prony_vector_graficos(vector_h_analitico,vector_h_experimental,tamanho_fila,t);
 
-
-
-% [array_s,array_A] = newpronySIMO(vector_h_experimental,dt,8);
-% array_s = array_s';
 
 
 
