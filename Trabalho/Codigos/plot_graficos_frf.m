@@ -1,4 +1,4 @@
-function plot_graficos_frf(frf_analitica,frf_experimental,coeff_experimental,input_experimental,f,t,nome_do_aluno)
+function [frac_medio,numerador,denominador] = plot_graficos_frf(frf_analitica,frf_experimental,coeff_experimental,input_experimental,f,t,nome_do_aluno)
 
 
 %% Plot das FRFs e coeficiente de coerência
@@ -7,7 +7,19 @@ abs_frf_analitica = abs(frf_analitica);
 abs_frf_experimental = abs(frf_experimental);
 abs_coeff_experimental = abs(coeff_experimental);
 
-err = immse(abs_frf_analitica,abs_frf_experimental) 
+% Cálculo do FRAC ponto a ponto
+numerador = abs(frf_analitica .* conj(frf_experimental)).^2;
+denominador = (abs(frf_analitica).^2) .* (abs(frf_experimental).^2);
+size(numerador)
+size(denominador)
+frac = numerador ./ denominador;
+
+% Tratamento para evitar divisões por zero (caso algum denominador seja zero)
+frac(denominador == 0) = 0;
+
+% Se quiser um valor global (FRAC médio):
+frac_medio = mean(frac);
+
 
 
 output_folder = '../Imagens/frf_analitica/';
@@ -64,12 +76,6 @@ xlabel("Hertz");
 % salva em eps (modo vetor, alta qualidade)
 print(fig, full_path, '-depsc');
 
-% 
-% figure;
-% plot(f(1:1600),abs_coeff_experimental);
-% title("Coeficiente de coerência ordinária");
-% ylabel("Coh2,1(f)");
-% xlabel("Hertz");
 
 nome_arquivo = strcat(char(nome_do_aluno), '_input.eps');
 fig = figure('Name',nome_arquivo);
@@ -79,11 +85,19 @@ plot(t,input_experimental);
 title("Entrada");
 ylabel("x(t)");
 xlabel("t");
-% if(nome_do_aluno == "Ivan")
-%     xlim([0 0.01]); % aqui você coloca o intervalo de tempo que quer (ex: 0 a 10 ms)
-% end
+if(nome_do_aluno == "Ivan")
+    xlim([0 0.01]); % aqui você coloca o intervalo de tempo que quer (ex: 0 a 10 ms)
+end
 print(fig, full_path, '-depsc');
 
 
 
 end
+
+
+% 
+% figure;
+% plot(f(1:1600),abs_coeff_experimental);
+% title("Coeficiente de coerência ordinária");
+% ylabel("Coh2,1(f)");
+% xlabel("Hertz");

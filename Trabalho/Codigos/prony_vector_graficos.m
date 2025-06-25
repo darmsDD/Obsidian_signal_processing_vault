@@ -1,6 +1,6 @@
-function [array_A,array_s,nmod] =   prony_e_graficos(vector_h_analitico,vector_h_experimental,tamanho_fila,t,nmod)
+function [array_A,array_s,nmod] =   prony_vector_graficos(vector_h_analitico,vector_h_experimental,tamanho_fila,t)
 
-isAnalitical = input("Analytical (1)| Experiment (anything else):");
+isAnalitical = input("Analytical (1)| Experiment (0):");
 nmod = input("Type number of mods (will be multiplied by 2):");
 dt = t(2) - t(1);
 t_length = length(t);
