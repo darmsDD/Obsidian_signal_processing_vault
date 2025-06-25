@@ -121,9 +121,6 @@ for numero_na_fila_medicao=1:tamanho_fila
         for j=1:nmod
             numerador = phi(pos_vetor_saida,j)*phi(pos_vetor_excitacao,j);
             denominador = m_modal(j)*((wn(j))^2 - (w(p))^2 + 1i*2*w(p)*wn(j)*xi);
-            %denominador = m_modal(j)*((wn(j))^2 - (w(p))^2 + 1i*2*w(p)*wn(j)*xi)/(4*pi^2);
-            %denominador = m_modal(j)*((fn(j))^2 - (f(p))^2 + 1i*2*f(p)*fn(j)*xi)(-);
-            
             frf_viga(p) = frf_viga(p) + numerador/denominador;
         end
     end
@@ -142,9 +139,9 @@ for numero_na_fila_medicao=1:tamanho_fila
     
     %% Plot das FRFs, coeficiente de coerência e entrada
     %plot_graficos_frf(frf_analitica,frf_experimental,coeff_experimental,input_experimental,f,t,nome_do_aluno);
-    %plot_graficos_frf(vector_H_analitico(:,numero_na_fila_medicao),vector_H_experimental(:,numero_na_fila_medicao), ...
-    %    vector_Coeff_experimental(:,numero_na_fila_medicao),vector_input_experimental(:,numero_na_fila_medicao), ...
-    %    f,t,nome_do_aluno);
+    plot_graficos_frf(vector_H_analitico(:,numero_na_fila_medicao),vector_H_experimental(:,numero_na_fila_medicao), ...
+        vector_Coeff_experimental(:,numero_na_fila_medicao),vector_input_experimental(:,numero_na_fila_medicao), ...
+        f,t,nome_do_aluno);
 
 end
 
@@ -184,9 +181,12 @@ t = (0:qtd_linhas_experimental-1)*dt;
 %plot_ht(vector_h_analitico,vector_h_experimental,t,tamanho_fila,vector_nome_das_pessoas);
 
 
+
+
 %% Prony
-[array_s,array_A] = newpronySIMO(vector_h_experimental,dt,8);
-array_s = array_s';
+
+% [array_s,array_A] = newpronySIMO(vector_h_experimental,dt,8);
+% array_s = array_s';
 
 
 
