@@ -1,4 +1,4 @@
-function [array_A,array_s,nmod] =   prony_array_graficos(vector_h_analitico,vector_h_experimental,tamanho_fila,t)
+function [A,s,nmod] =   prony_array_graficos(vector_h_analitico,vector_h_experimental,tamanho_fila,t,vector_nome_das_pessoas)
 
 isAnalitical = input("Analytical (1)| Experiment (0):");
 nmod = input("Type number of mods (will be multiplied by 2):");
@@ -20,7 +20,10 @@ for numero_fila_medicao=1:tamanho_fila
             h_prony(i+1) = h_prony(i+1) + A(r,numero_fila_medicao)*exp(s(r)*dt*i);
         end
     end
-     figure;
+    nome_do_aluno = vector_nome_das_pessoas(numero_fila_medicao);
+    output_folder = '../Imagens/prony_array/';
+    nome_arquivo = strcat(char(nome_do_aluno), '_prony_array.eps');
+    fig = figure('Name',nome_arquivo);
      analytical_or_experimental_string = "experimental";
      if(isAnalitical)
         plot(t,vector_h_analitico(:,numero_fila_medicao)');
@@ -32,6 +35,8 @@ for numero_fila_medicao=1:tamanho_fila
      hold on;
      plot(t,real(h_prony));
      legend(analytical_or_experimental_string,"prony");
+     full_path = fullfile(output_folder, nome_arquivo);
+     print(fig, full_path, '-depsc');
 end
 
 

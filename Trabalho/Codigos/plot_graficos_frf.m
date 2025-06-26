@@ -10,8 +10,6 @@ abs_coeff_experimental = abs(coeff_experimental);
 % Cálculo do FRAC ponto a ponto
 numerador = abs(frf_analitica .* conj(frf_experimental)).^2;
 denominador = (abs(frf_analitica).^2) .* (abs(frf_experimental).^2);
-size(numerador)
-size(denominador)
 frac = numerador ./ denominador;
 
 % Tratamento para evitar divisões por zero (caso algum denominador seja zero)
@@ -23,18 +21,18 @@ frac_medio = mean(frac);
 
 
 output_folder = '../Imagens/frf_analitica/';
-nome_arquivo = strcat(char(nome_do_aluno), '_frf_analitica.eps');
+nome_arquivo = strcat(char(nome_do_aluno), '_frf_analitica.png');
 fig = figure('Name',nome_arquivo);
 plot(f(1:1600),db(abs_frf_analitica));
 xlabel("f (hertz)");
 ylabel("H(f) em db(g/lbf)");
 title("FRF Analítica");
 full_path = fullfile(output_folder, nome_arquivo);
-print(fig, full_path, '-depsc');
+%print(fig, full_path, '-dpng');
 
 
 output_folder = '../Imagens/frf_coerencia_experimental/';
-nome_arquivo = strcat(char(nome_do_aluno), '_frf_coerencia_experimental.eps');
+nome_arquivo = strcat(char(nome_do_aluno), '_frf_coerencia_experimental.png');
 fig = figure('Name',nome_arquivo);
 subplot(2,1,1);
 plot(f(1:1600),db(abs_frf_experimental));
@@ -48,13 +46,13 @@ title("Coeficiente de coerência ordinária");
 ylabel("Coh2,1(f)");
 xlabel("Hertz");
 full_path = fullfile(output_folder, nome_arquivo);
-print(fig, full_path, '-depsc');
+%print(fig, full_path, '-dpng');
 
 
 
 
 % FRF analítica vs experimental, e coerencia
-nome_arquivo = strcat(char(nome_do_aluno), '_frf_analitica_vs_experimental.eps');
+nome_arquivo = strcat(char(nome_do_aluno), '_frf_analitica_vs_experimental.png');
 fig = figure('Name',nome_arquivo);
 output_folder = '../Imagens/frf_analitica_vs_experimental/';
 full_path = fullfile(output_folder, nome_arquivo);
@@ -73,11 +71,11 @@ plot(f(1:1600),abs_coeff_experimental);
 title("Coeficiente de coerência ordinária");
 ylabel("Coh2,1(f)");
 xlabel("Hertz");
-% salva em eps (modo vetor, alta qualidade)
-print(fig, full_path, '-depsc');
+% salva em png
+%print(fig, full_path, '-dpng');
 
 
-nome_arquivo = strcat(char(nome_do_aluno), '_input.eps');
+nome_arquivo = strcat(char(nome_do_aluno), '_input.png');
 fig = figure('Name',nome_arquivo);
 output_folder = '../Imagens/input/';
 full_path = fullfile(output_folder, nome_arquivo);
@@ -88,7 +86,7 @@ xlabel("t");
 if(nome_do_aluno == "Ivan")
     xlim([0 0.01]); % aqui você coloca o intervalo de tempo que quer (ex: 0 a 10 ms)
 end
-print(fig, full_path, '-depsc');
+%print(fig, full_path, '-dpng');
 
 
 

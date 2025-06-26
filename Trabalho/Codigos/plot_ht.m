@@ -10,22 +10,22 @@ function mse = plot_ht(vector_h_analitico,vector_h_experimental,t,tamanho_fila,v
         ha = vector_h_analitico(:, numero_na_fila_medicao);      
         mse(numero_na_fila_medicao) = mean((he - ha).^2);
 
-        % fig = figure("Name",nome_do_aluno);
-        % hold on;
-        % 
-        % % Filtragem com zero-phase para não distorcer a fase:
-        % plot(t,vector_h_experimental(:,numero_na_fila_medicao)','-o'); 
-        % plot(t,vector_h_analitico(:,numero_na_fila_medicao)','LineWidth', 2.0);
-        % 
-        % xlabel("t");
-        % ylabel("h");
-        % legend("h(t) experimental","h(t) analitico");
-        % hold off;
-        % % monta o nome do arquivo de forma segura (converte o nome para string, caso não seja)
-        % nome_arquivo = strcat(char(nome_do_aluno), '_h_t.eps');
-        % full_path = fullfile(output_folder, nome_arquivo);
-        % % salva em eps (modo vetor, alta qualidade)
-        % print(fig, full_path, '-depsc');
+        fig = figure("Name",nome_do_aluno);
+        hold on;
+
+        % Filtragem com zero-phase para não distorcer a fase:
+        plot(t,vector_h_experimental(:,numero_na_fila_medicao)','-o'); 
+        plot(t,vector_h_analitico(:,numero_na_fila_medicao)','LineWidth', 2.0);
+
+        xlabel("t");
+        ylabel("h");
+        legend("h(t) experimental","h(t) analitico");
+        hold off;
+        % monta o nome do arquivo de forma segura (converte o nome para string, caso não seja)
+        nome_arquivo = strcat(char(nome_do_aluno), '_h_t.eps');
+        full_path = fullfile(output_folder, nome_arquivo);
+        % salva em eps (modo vetor, alta qualidade)
+        %print(fig, full_path, '-depsc');
     end
 
 end
