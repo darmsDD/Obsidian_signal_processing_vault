@@ -183,15 +183,17 @@ vector_h_experimental = ifft(vector_H_experimental_add_f_negativo,[],1);
 
 [qtd_linhas_experimental,qtd_colunas_experimental] = size(vector_H_experimental_add_f_negativo);
 t = (0:qtd_linhas_experimental-1)*dt;
-% mse_ht = plot_ht(vector_h_analitico,vector_h_experimental,t,tamanho_fila,vector_nome_das_pessoas);
+%mse_ht = plot_ht(vector_h_analitico,vector_h_experimental,t,tamanho_fila,vector_nome_das_pessoas);
 
 
 
 
 %% Prony
 
-%prony_array_graficos(vector_h_analitico,vector_h_experimental,tamanho_fila,t,vector_nome_das_pessoas);
-[array_A,array_s,order,mse_prony] = prony_vector_graficos(vector_h_analitico,vector_h_experimental,tamanho_fila,t,vector_nome_das_pessoas);
+
+%[A,s,nmod,isAnalitical] =   prony_array_graficos(vector_h_analitico,vector_h_experimental,tamanho_fila,t,vector_nome_das_pessoas)
+[array_A,array_s,order,isAnalytical] = prony_array_graficos(vector_h_analitico,vector_h_experimental,tamanho_fila,t,vector_nome_das_pessoas);
+%[array_A,array_s,order,mse_pronyn,isAnalytical] = prony_vector_graficos(vector_h_analitico,vector_h_experimental,tamanho_fila,t,vector_nome_das_pessoas);
 
 tamanho_fila = 9;
 
@@ -203,13 +205,16 @@ array_wn = abs(array_s);
 prony_modal = [];%zeros(nmod,tamanho_fila);
 prony_modaln = [];%zeros(nmod,tamanho_fila);
 for i=1:l
-     for j=1:c
-        [value, min_idx] = min(abs(array_wn(i,j)/(2*pi) - fn));
+        [value, min_idx] = min(abs(array_wn(i)/(2*pi) - fn));
         if(abs(value) < 200)
-           prony_modal(min_idx,i) = abs(array_A(i,j)); 
+           prony_modal(min_idx,:) = abs(array_A(i,:));
+           for j=2: size(array_A,2)
+                prony_modal(min_idx,j-1) = abs(array_A(i,j-1));
+                if(abs(array_A(i,j-1)) == abs(array_A(i,j)))
+                    j = j+1;
+                end
+           end
         end
-
-     end
 end
 prony_modal_min = min(prony_modal(:));
 prony_modal_max = max(prony_modal(:));
@@ -224,26 +229,29 @@ for i=2:tamanho_distancia
     posicoes_phi(i) = posicoes_phi(i-1) + 70e-3/dx;
 end
 
-%labels{1} = 'f_0 = 0 Hz';
-for k = 1:nmod
-    labels{k} = ['f_' num2str(k) ' = ' num2str(fn(k)) ' Hz'];
+
+if(isAnalytical)
+    string_for_label = "analitico";
+    output_folder = '../Imagens/prony_modais/analitico';
+else
+    string_for_label = "experimental";
+    output_folder = '../Imagens/prony_modais/experimental';
 end
 
-
-
 for i=1:length(fn)
-    output_folder = '../Imagens/prony_modais_/';
-    nome_arquivo = strcat(char(nome_do_aluno), '_prony_array.eps');
+    nome_arquivo = fn(i) +  "_prony_modal.png";
     fig = figure('Name',nome_arquivo);
     hold on;
-    plot(distances(1:tamanho_distancia),prony_modal(i,:));
+    plot(distances(1:tamanho_distancia),prony_modal(i,1:tamanho_distancia));
     plot(distances(1:tamanho_distancia),phi(posicoes_phi,i));
-    label = ['prony f_' num2str(i) ' = ' num2str(fn(i)) ' Hz'];
-    label2 = ['experimental f_' num2str(i) ' = ' num2str(fn(i)) ' Hz'];
+    label = "prony" + string_for_label + " f_" + i + "= " + num2str(fn(i)) + " Hz";
+    label2 = "analitico f_"+ i + " = " + fn(i) + " Hz";
     legend(label,label2);
-    xlabel("x/L");
-    ylabel("Forma modal");
+    xlabel("x em metros");
+    ylabel("Amplitude");
     hold off;
+    full_path = fullfile(output_folder, nome_arquivo);
+    %print(fig, full_path, '-dpng');
 end
 
 

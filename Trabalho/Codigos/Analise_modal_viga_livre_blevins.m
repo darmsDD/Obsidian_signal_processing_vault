@@ -9,7 +9,7 @@ eta = 0.01;
 E0=210e9; % modulo de elasticidade [Pa]
 E=E0*(1+1i*eta); % modulo de elasticidade complexo
 rho=7800; % densidade [kg/m3]
-%E=E0;
+%E=E0;0
 
 b=13e-3;  % base da seção transversal [m]
 h=13e-3;  % altura da seção transversal [m]
