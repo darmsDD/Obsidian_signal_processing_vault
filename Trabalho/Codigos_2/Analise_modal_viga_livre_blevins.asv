@@ -211,8 +211,8 @@ while i < size_s
     i = i+1;
 end
 vector_wn = abs(vector_s_without_conjugated);
-sorted_vector_wn = sortrows(vector_wn,1);
-sorted_vector_fn = sorted_vector_wn./(2*pi);
+sort(vector_wn)
+
 
 
 

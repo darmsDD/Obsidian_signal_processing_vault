@@ -6,7 +6,7 @@ dt = t(2) - t(1);
 t_length = length(t);
 if(isAnalitical)
         [s,A] = newpronySIMO(vector_h_analitico,dt,nmod);
-    else
+else
         [s,A] = newpronySIMO(vector_h_experimental,dt,nmod);
 end
 
