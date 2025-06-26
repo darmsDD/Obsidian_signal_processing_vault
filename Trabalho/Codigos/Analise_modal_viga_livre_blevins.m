@@ -213,7 +213,8 @@ for i=1:l
 end
 prony_modal_min = min(prony_modal(:));
 prony_modal_max = max(prony_modal(:));
-
+figure;
+plot(prony_modal)
 % prony_modal_norm = 2 * (prony_modal - prony_modal_min) / (prony_modal_max - prony_modal_min) - 1;
 % distances = (90e-3:70e-3:770e-3);
 % [~,tamanho_distancia] = size(prony_modal);
