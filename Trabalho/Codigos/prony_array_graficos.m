@@ -36,7 +36,7 @@ for numero_fila_medicao=1:tamanho_fila
      plot(t,real(h_prony));
      legend(analytical_or_experimental_string,"prony");
      full_path = fullfile(output_folder, nome_arquivo);
-     print(fig, full_path, '-depsc');
+     %print(fig, full_path, '-depsc');
 end
 
 

@@ -1,4 +1,4 @@
-function [array_A,array_s,nmod,mse] =   prony_vector_graficos(vector_h_analitico,vector_h_experimental,tamanho_fila,t,vector_nome_das_pessoas)
+function [array_A,array_s,nmod,mse,isAnalitical] =   prony_vector_graficos(vector_h_analitico,vector_h_experimental,tamanho_fila,t,vector_nome_das_pessoas)
 
 isAnalitical = input("Analytical (1)| Experiment (not one):");
 nmod = input("Type order (will be multiplied by 2):");
@@ -47,7 +47,7 @@ for numero_fila_medicao=1:tamanho_fila
      legend(analytical_or_experimental_string,"prony");
      full_path = fullfile(output_folder, nome_arquivo);
      %print(fig, full_path, '-dpng');
-     set(fig, 'PaperUnits', 'centimeters', 'PaperPosition', [0 0 20 16]);
+     %set(fig, 'PaperUnits', 'centimeters', 'PaperPosition', [0 0 20 16]);
      %print(fig, full_path, '-dpng', '-r300');
 
 end

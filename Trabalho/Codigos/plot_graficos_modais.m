@@ -20,4 +20,4 @@ legend(labels,'Location','southwest');
 %lgd.FontSize=16;
 grid
 full_path = fullfile(output_folder, nome_arquivo);
-print(fig, full_path, '-depsc');
+%print(fig, full_path, '-depsc');
