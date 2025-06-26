@@ -83,19 +83,9 @@ plot(t,input_experimental);
 title("Entrada");
 ylabel("x(t)");
 xlabel("t");
-if(nome_do_aluno == "Ivan")
-    xlim([0 0.01]); % aqui você coloca o intervalo de tempo que quer (ex: 0 a 10 ms)
-end
+% if(nome_do_aluno == "Ivan")
+%     xlim([0 0.01]); % aqui você coloca o intervalo de tempo que quer (ex: 0 a 10 ms)
+% end
 %print(fig, full_path, '-dpng');
 
-
-
 end
-
-
-% 
-% figure;
-% plot(f(1:1600),abs_coeff_experimental);
-% title("Coeficiente de coerência ordinária");
-% ylabel("Coh2,1(f)");
-% xlabel("Hertz");
